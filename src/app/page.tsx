@@ -6,39 +6,100 @@ import { services, benefits, suppliers, galleryImages, commercialClients, BUSINE
 const featured = galleryImages.slice(0, 3);
 
 export default function HomePage() {
+  const heroImage = galleryImages.find((g) => g.file === "1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp")!;
+
   return (
     <>
       {/* Hero */}
-      <section className="bg-[color:var(--color-paper-dim)] border-b border-[color:var(--color-line)] py-24 lg:py-32">
-        <div className="container-page">
-          <p className="uppercase tracking-[0.28em] text-[color:var(--color-brick)] text-xs font-medium mb-4">
+      <section className="border-b border-[color:var(--color-line)] grid grid-cols-1 lg:grid-cols-[47fr_53fr]">
+        <div className="flex flex-col px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
+          <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold mb-6">
             Masonry Specialists &middot; Southern California
           </p>
           <h1
-            className="text-4xl md:text-6xl font-medium text-[color:var(--color-ink)] mb-6 max-w-3xl"
+            className="text-5xl md:text-7xl leading-[0.98] tracking-tight text-[color:var(--color-ink)] mb-8"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Stone, brick, tile & precast — built to last.
+            Crafted in stone.
+            <br />
+            <em className="italic text-[color:var(--color-brick)] font-normal">Grounded in place.</em>
           </h1>
-          <p className="text-[color:var(--color-ink-soft)] max-w-2xl leading-relaxed mb-10 text-lg">
-            CMF Masonry installs natural and manufactured stone veneer, tile, full and thin brick,
-            and architectural precast for homeowners, designers, architects, and general
-            contractors across {BUSINESS.serviceArea}.
+          <p
+            className="text-[color:var(--color-ink-soft)] max-w-xl leading-relaxed mb-9 text-lg"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            CMF Masonry brings architectural intention and disciplined craft to stone, brick, tile,
+            and precast — across homes, hospitality, retail, and commercial spaces in{" "}
+            {BUSINESS.serviceArea}.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-wrap items-center gap-8 mb-12">
             <Link
               href="/estimate"
-              className="inline-block bg-[color:var(--color-brick)] hover:bg-[color:var(--color-brick-dark)] text-white px-8 py-3.5 font-medium transition-colors text-center"
+              className="inline-flex items-center gap-3 bg-[color:var(--color-ink)] hover:-translate-y-0.5 text-white px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] transition-transform"
             >
-              Request an Estimate
+              Request an estimate <span className="text-[color:var(--color-brick-light)]">&#8599;</span>
             </Link>
             <Link
               href="/gallery"
-              className="inline-block border border-[color:var(--color-ink)]/20 text-[color:var(--color-ink)] hover:border-[color:var(--color-ink)] px-8 py-3.5 font-medium transition-colors text-center"
+              className="text-xs font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink)] border-b border-[color:var(--color-ink)] pb-0.5"
             >
-              View Our Work
+              Explore our work <span className="text-[color:var(--color-brick)]">&#8595;</span>
             </Link>
           </div>
+          <div className="flex gap-10 mt-auto pt-6 border-t border-[color:var(--color-line)] text-[10px] uppercase tracking-[0.12em] text-[color:var(--color-ink-soft)]">
+            <span>
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Southern California</b>
+              Orange &middot; Los Angeles &middot; Beyond
+            </span>
+            <span>
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Residential + commercial</b>
+              One standard of craft
+            </span>
+          </div>
+        </div>
+        <div className="relative min-h-[420px] lg:min-h-[670px]">
+          <Image
+            src={`/gallery/${heroImage.file}`}
+            alt={heroImage.alt}
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 53vw"
+            className="object-cover"
+          />
+          <div className="absolute z-10 left-6 bottom-6 bg-[color:var(--color-paper)] px-6 py-5 max-w-[240px]">
+            <small className="block uppercase tracking-[0.2em] text-[8px] text-[color:var(--color-brick)] mb-2.5">
+              Material study / 01
+            </small>
+            <b className="font-normal text-[17px] leading-[1.25]" style={{ fontFamily: "var(--font-serif)" }}>
+              Stone is structure, surface, and story.
+            </b>
+          </div>
+          <div className="absolute z-10 right-7 top-7 w-[88px] h-[88px] rounded-full border border-white/80 text-white flex items-center justify-center gap-1.5 rotate-[8deg]">
+            <span className="font-serif text-lg" style={{ fontFamily: "var(--font-serif)" }}>CMF</span>
+            <small className="text-[6px] tracking-[0.16em] leading-tight">BUILT<br />WITH CARE</small>
+          </div>
+        </div>
+      </section>
+
+      {/* Manifesto */}
+      <section className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)] px-6 sm:px-10 lg:px-16 py-24 lg:py-28 grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-10">
+        <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick-light)] text-xs font-bold self-start">
+          The CMF standard
+        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-16 items-end">
+          <h2
+            className="text-4xl md:text-6xl leading-[1.06] tracking-tight"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Material knowledge.
+            <br />
+            Measured execution.
+          </h2>
+          <p className="text-[color:var(--color-paper)]/70 leading-relaxed max-w-md" style={{ fontFamily: "var(--font-serif)" }}>
+            We believe excellent masonry begins before the first unit is set. It starts with the
+            right material, a resolved detail, and a crew that understands how every line
+            contributes to the whole.
+          </p>
         </div>
       </section>
 
@@ -92,30 +153,41 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="container-page py-20">
-        <h2
-          className="text-3xl font-medium text-[color:var(--color-ink)] mb-3"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          Our Masonry Services
-        </h2>
-        <p className="text-[color:var(--color-ink-soft)] mb-12 max-w-2xl">
-          From stone veneer to full brick installations, our team handles fireplace surrounds,
-          hearths, feature walls, exterior facades, and architectural elements.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s) => (
-            <div key={s.slug} className="border border-[color:var(--color-line)] p-7">
-              <div className="w-10 h-10 bg-[color:var(--color-paper-dim)] flex items-center justify-center mb-4">
-                <div className="w-5 h-5 bg-[color:var(--color-brick)]" />
-              </div>
+      <section className="px-6 sm:px-10 lg:px-16 py-24 lg:py-28">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold">
+            Capabilities
+          </p>
+          <h2
+            className="text-4xl md:text-6xl leading-none tracking-tight text-[color:var(--color-ink)]"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            One craft. <em className="italic text-[color:var(--color-brick)] font-normal">Many expressions.</em>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 border-l border-[color:var(--color-line)]">
+          {services.map((s, i) => (
+            <div
+              key={s.slug}
+              className="border-r border-[color:var(--color-line)] px-6 py-7 flex flex-col min-h-[340px]"
+            >
+              <span className="italic text-lg text-[color:var(--color-brick)]" style={{ fontFamily: "var(--font-serif)" }}>
+                0{i + 1}
+              </span>
+              <div className="w-14 h-14 my-8 bg-[color:var(--color-brick)]/90" />
               <h3
-                className="text-lg font-medium text-[color:var(--color-ink)] mb-3"
+                className="text-2xl mb-3 text-[color:var(--color-ink)]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 {s.title}
               </h3>
-              <p className="text-[color:var(--color-ink-soft)] text-sm leading-relaxed">{s.description}</p>
+              <p className="text-[color:var(--color-ink-soft)] text-sm leading-relaxed max-w-[22ch]">{s.description}</p>
+              <Link
+                href="/estimate"
+                className="mt-auto pt-7 text-[9px] font-bold uppercase tracking-[0.17em] text-[color:var(--color-brick)]"
+              >
+                Discuss your project &#8599;
+              </Link>
             </div>
           ))}
         </div>

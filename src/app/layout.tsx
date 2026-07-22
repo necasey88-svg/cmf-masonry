@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -7,26 +6,24 @@ import AnalyticsScripts from "@/components/AnalyticsScripts";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
 import { BUSINESS, SITE_URL } from "@/lib/business-data";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CMF Masonry | Stone, Brick, Tile & Precast Installation — Southern California",
+    default: "CMF Masonry | Crafted in Stone. Grounded in Place.",
     template: "%s | CMF Masonry",
   },
   description:
     "CMF Masonry installs natural & manufactured stone veneer, tile, brick, and architectural precast for homeowners, designers, architects, and general contractors across Southern California.",
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  openGraph: {
+    title: "CMF Masonry | Crafted in Stone. Grounded in Place.",
+    description: "Architectural masonry for Southern California homes and commercial spaces.",
+    url: SITE_URL,
+    siteName: "CMF Masonry",
+    images: [{ url: "/og.png", width: 1733, height: 909, alt: "CMF Masonry — Crafted in stone. Grounded in place." }],
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 const localBusinessSchema = {
@@ -53,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased ${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className="h-full antialiased">
       <head>
         <script
           type="application/ld+json"

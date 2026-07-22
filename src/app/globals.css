@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  /* Stone / mortar neutrals */
-  --color-paper: #f6f4ef;
-  --color-paper-dim: #ece7dc;
-  --color-ink: #211d19;
-  --color-ink-soft: #524a41;
-  --color-stone: #8a8175;
-  --color-stone-dark: #57503f;
-  --color-line: #ddd4c2;
+  /* Bone / limestone neutrals (ported from the Codex brand prototype, commit cc4e7c9) */
+  --color-paper: #f5f0e7;
+  --color-paper-warm: #fffdf8;
+  --color-paper-dim: #e8dfd0;
+  --color-ink: #242521;
+  --color-ink-soft: #57544c;
+  --color-stone: #b8aa96;
+  --color-stone-dark: #666157;
+  --color-sage: #667061;
+  --color-line: rgba(36, 37, 33, 0.18);
 
-  /* Brick-red accent */
-  --color-brick: #9c3b2c;
-  --color-brick-dark: #782c20;
-  --color-brick-light: #c2624a;
+  /* Clay accent */
+  --color-brick: #a94e32;
+  --color-brick-dark: #813821;
+  --color-brick-light: #d37858;
 
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  /* System serif/sans — no webfont fetch, avoids the Google Fonts dependency
+     the previous Playfair/Inter setup had. */
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 @theme inline {
   --color-paper: var(--color-paper);
+  --color-paper-warm: var(--color-paper-warm);
   --color-paper-dim: var(--color-paper-dim);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
   --color-stone: var(--color-stone);
   --color-stone-dark: var(--color-stone-dark);
+  --color-sage: var(--color-sage);
   --color-line: var(--color-line);
   --color-brick: var(--color-brick);
   --color-brick-dark: var(--color-brick-dark);
@@ -34,10 +40,14 @@
   --font-sans: var(--font-sans);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .container-page {
@@ -53,5 +63,14 @@ body {
   .container-page {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
   }
 }

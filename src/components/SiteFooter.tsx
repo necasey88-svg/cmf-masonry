@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { BUSINESS } from "@/lib/business-data";
+import BrandMark from "@/components/BrandMark";
 
 export default function SiteFooter() {
   return (
     <footer className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)]">
       <div className="container-page py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
-          <span className="text-xl" style={{ fontFamily: "var(--font-serif)" }}>
-            CMF Masonry
+          <span className="flex items-center gap-2.5">
+            <BrandMark className="w-7 h-7" dark />
+            <span className="text-xl" style={{ fontFamily: "var(--font-serif)" }}>
+              CMF <b className="font-normal">Masonry</b>
+            </span>
           </span>
           <p className="text-sm text-[color:var(--color-paper)]/60 mt-3 leading-relaxed">
             Stone, brick, tile, and precast installations for homeowners, designers, architects,

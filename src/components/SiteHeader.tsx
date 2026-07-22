@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BUSINESS } from "@/lib/business-data";
+import BrandMark from "@/components/BrandMark";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -21,15 +22,18 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-[color:var(--color-paper)]/95 backdrop-blur border-b border-[color:var(--color-line)]">
       <div className="container-page flex items-center justify-between h-20">
-        <Link href="/" className="flex flex-col leading-none">
-          <span
-            className="text-2xl tracking-wide text-[color:var(--color-ink)]"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            CMF Masonry
-          </span>
-          <span className="text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-ink-soft)] mt-0.5">
-            Stone &middot; Brick &middot; Tile &middot; Precast
+        <Link href="/" className="flex items-center gap-3">
+          <BrandMark className="w-9 h-9" />
+          <span className="flex flex-col leading-none">
+            <span
+              className="text-2xl tracking-tight text-[color:var(--color-ink)]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              CMF <b className="font-normal">Masonry</b>
+            </span>
+            <span className="text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-ink-soft)] mt-0.5">
+              Stone &middot; Brick &middot; Tile &middot; Precast
+            </span>
           </span>
         </Link>
 
