@@ -17,12 +17,17 @@ export default function EstimateForm({ defaultProjectType = "" }: { defaultProje
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+    formData.append("subject", "New Estimate Request — CMF Masonry");
     if (typeof window !== "undefined") {
       formData.append("referring_page", window.location.pathname);
     }
 
     try {
-      const res = await fetch("/api/estimate", { method: "POST", body: formData });
+      // Submitted directly to Web3Forms from the browser (their access keys are
+      // designed to be public-facing) — a server-side proxy from Vercel's
+      // datacenter IPs got blocked/challenged and returned non-JSON responses.
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
       const data = await res.json();
       if (data.success) {
         setStatus("success");
