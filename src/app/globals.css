@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  /* Stone / mortar neutrals */
+  --color-paper: #f6f4ef;
+  --color-paper-dim: #ece7dc;
+  --color-ink: #211d19;
+  --color-ink-soft: #524a41;
+  --color-stone: #8a8175;
+  --color-stone-dark: #57503f;
+  --color-line: #ddd4c2;
+
+  /* Brick-red accent */
+  --color-brick: #9c3b2c;
+  --color-brick-dark: #782c20;
+  --color-brick-light: #c2624a;
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-stone: var(--color-stone);
+  --color-stone-dark: var(--color-stone-dark);
+  --color-line: var(--color-line);
+  --color-brick: var(--color-brick);
+  --color-brick-dark: var(--color-brick-dark);
+  --color-brick-light: var(--color-brick-light);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
