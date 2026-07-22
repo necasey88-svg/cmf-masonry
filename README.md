@@ -53,16 +53,37 @@ optional future upgrade if per-channel dynamic swapping is wanted later.
 Web3Forms access key is set (`WEB3FORMS_ACCESS_KEY`, its own form named "CMF Masonry - Estimate
 Request", separate from calmantel's/hearthline's forms).
 
-## Outstanding, asset-blocked (do not fabricate)
+## Brand system (ported from a Codex prototype)
 
-- No real "CMF Masonry" logo exists yet — the header/footer use a text wordmark
-  (Playfair Display) as a placeholder. Swap in a real logo once designed.
+The logo mark (`src/components/BrandMark.tsx`, `public/favicon.svg`), the bone/clay/charcoal
+palette and Georgia-serif typography in `globals.css`, the homepage hero/manifesto/services
+treatment, and `public/og.png` were manually ported from a brand redesign Codex built in a
+**separate, structurally-incompatible checkout** — a Vite/Cloudflare Workers "OpenAI Apps"
+scaffold at `C:\Users\NatalieCasey\Documents\Codex\2026-07-22\cmf`, commit `cc4e7c9` ("Build CMF
+Masonry brand and website"). It is not a git remote of this repo and can't be cherry-picked
+directly; useful pieces were re-implemented by hand into this Next.js codebase instead.
+
+That prototype also published itself to its own Cloudflare-based hosting with its own DNS
+records — **do not point `cmfmasonry.com`'s DNS at that hosting.** This Next.js/Vercel
+deployment is the single canonical site. The prototype's `mailto:info@cmfmasonry.com` contact
+link and its own copies of the project photos were intentionally **not** ported — this site
+keeps the real Web3Forms `/estimate` flow and the original gallery files with verified
+captions/categorization.
+
+## Outstanding
+
 - No masonry photography exists beyond the 14 ported gallery images. Don't pad with stock/AI
   imagery — ask for real photos as projects are completed.
-- `cmfmasonry.com` still needs to be registered and pointed at a Vercel deployment; this isn't
-  something that can be done from within the repo.
 
-## Deploy
+## Domain & deploy — status
 
-Same manual pattern as `hearthline-supply`: push to a new GitHub repo, import into Vercel, set env
-vars in the Vercel dashboard. No CI pipeline.
+- Domain `cmfmasonry.com` is registered via **Cloudflare Registrar** (DNS also lives at
+  Cloudflare). Two CNAME records point it at Vercel (`@` and `www` → the Vercel-provided
+  `*.vercel-dns-*.com` target), both set to **DNS only** (not proxied).
+- GitHub: `necasey88-svg/cmf-masonry`. Vercel project imported from that repo, same manual
+  pattern as `calmantel-website`/`manteldistribution` — no CI pipeline.
+- `next.config.ts` sets `images.unoptimized = true` — the Vercel account's (Hobby-plan) shared
+  Image Optimization transformation quota was already exhausted account-wide, which made every
+  `<Image>` 402 on this project until optimization was disabled. All images here are already
+  reasonably-sized static files, so this has no real downside. If `calmantel-website` or
+  `manteldistribution` ever show broken images, this same quota is the first thing to check.
