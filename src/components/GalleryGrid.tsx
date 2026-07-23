@@ -4,20 +4,27 @@ import { useState } from "react";
 import Image from "next/image";
 import { galleryImages, type GalleryImage } from "@/lib/business-data";
 
-type Tab = "all" | "residential" | "commercial";
+type Tab = "all" | "residential" | "commercial" | "precast";
 
 export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }) {
   const [activeTab, setActiveTab] = useState<Tab>(defaultTab);
 
   const residential = galleryImages.filter((p) => p.category === "residential");
   const commercial = galleryImages.filter((p) => p.category === "commercial");
+  const precast = galleryImages.filter((p) => p.category === "precast");
   const photos: GalleryImage[] =
-    activeTab === "residential" ? residential : activeTab === "commercial" ? commercial : galleryImages;
+    activeTab === "residential"
+      ? residential
+      : activeTab === "commercial"
+      ? commercial
+      : activeTab === "precast"
+      ? precast
+      : galleryImages;
 
   return (
     <>
       <div className="flex gap-2 border-b border-[color:var(--color-line)] mb-8">
-        {(["all", "residential", "commercial"] as Tab[]).map((tab) => (
+        {(["all", "residential", "commercial", "precast"] as Tab[]).map((tab) => (
           <button
             key={tab}
             type="button"
@@ -32,7 +39,9 @@ export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }
               ? `All Projects (${galleryImages.length})`
               : tab === "residential"
               ? `Residential (${residential.length})`
-              : `Commercial (${commercial.length})`}
+              : tab === "commercial"
+              ? `Commercial (${commercial.length})`
+              : `Precast (${precast.length})`}
           </button>
         ))}
       </div>
@@ -41,7 +50,7 @@ export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }
         {photos.map((photo) => (
           <div key={photo.file} className="group relative overflow-hidden bg-stone-100 aspect-[4/3]">
             <Image
-              src={`/gallery/${photo.file}`}
+              src={photo.src ?? `/gallery/${photo.file}`}
               alt={photo.alt}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

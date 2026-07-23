@@ -99,7 +99,11 @@ export const suppliers: Supplier[] = [
 
 export type GalleryImage = {
   file: string;
-  category: "residential" | "commercial";
+  // Optional full public path. When absent, the image is served from
+  // /gallery/<file>. New residential/precast project photos live in
+  // their own public folders and set src directly (no duplication).
+  src?: string;
+  category: "residential" | "commercial" | "precast";
   alt: string;
   caption: string;
 };
@@ -191,6 +195,34 @@ export const galleryImages: GalleryImage[] = [
     alt: "Outdoor courtyard with red umbrellas and seating at sunset",
     caption: "Commercial Courtyard",
   },
+
+  // Residential project photos (client downloads, 2026-07)
+  { file: "residential-white-modern-twostory.jpeg", src: "/residential/residential-white-modern-twostory.jpeg", category: "residential", alt: "White contemporary two-story home with stone and stucco exterior", caption: "White Contemporary Residence" },
+  { file: "residential-traditional-stone-entry.jpeg", src: "/residential/residential-traditional-stone-entry.jpeg", category: "residential", alt: "Traditional home with natural stone entry and landscaped drive", caption: "Traditional Stone Entry" },
+  { file: "residential-stone-traditional.jpeg", src: "/residential/residential-stone-traditional.jpeg", category: "residential", alt: "Stone and stucco traditional home under blue sky", caption: "Stone Traditional Home" },
+  { file: "residential-modern-stucco.jpeg", src: "/residential/residential-modern-stucco.jpeg", category: "residential", alt: "Modern smooth-stucco home elevation with landscaping", caption: "Modern Stucco Elevation" },
+  { file: "residential-stone-facade.jpeg", src: "/residential/residential-stone-facade.jpeg", category: "residential", alt: "Two-story residence with natural stone facade", caption: "Stone Facade Residence" },
+  { file: "residential-stone-white-twostory.jpeg", src: "/residential/residential-stone-white-twostory.jpeg", category: "residential", alt: "Two-story stone and white stucco home", caption: "Two-Story Stone & Stucco" },
+  { file: "residential-light-stone-modern.jpeg", src: "/residential/residential-light-stone-modern.jpeg", category: "residential", alt: "Light cut-stone contemporary home", caption: "Light Stone Contemporary" },
+  { file: "residential-modern-stone.jpeg", src: "/residential/residential-modern-stone.jpeg", category: "residential", alt: "Modern home with stone and stucco elevation", caption: "Modern Stone Elevation" },
+  { file: "residential-block-modern.jpeg", src: "/residential/residential-block-modern.jpeg", category: "residential", alt: "Block-clad modern home exterior", caption: "Block-Clad Modern Home" },
+  { file: "residential-white-window-lawn.jpeg", src: "/residential/residential-white-window-lawn.jpeg", category: "residential", alt: "White stucco residence with front lawn", caption: "White Stucco Residence" },
+  { file: "residential-modern-accent.jpeg", src: "/residential/residential-modern-accent.jpeg", category: "residential", alt: "Contemporary home with brick and stucco accent facade", caption: "Contemporary Accent Facade" },
+  { file: "residential-stone-entry-detail.jpeg", src: "/residential/residential-stone-entry-detail.jpeg", category: "residential", alt: "Natural stone entry and doorway detail", caption: "Stone Entry Detail" },
+
+  // Precast concrete project photos (client downloads, 2026-07)
+  { file: "precast-arched-entry.jpeg", src: "/precast/precast-arched-entry.jpeg", category: "precast", alt: "Cast stone arched entry surround", caption: "Arched Entry Surround" },
+  { file: "precast-arched-window-surrounds.jpeg", src: "/precast/precast-arched-window-surrounds.jpeg", category: "precast", alt: "Cast stone arched window surrounds", caption: "Arched Window Surrounds" },
+  { file: "precast-arched-breezeway.jpeg", src: "/precast/precast-arched-breezeway.jpeg", category: "precast", alt: "Cast stone arched breezeway passage", caption: "Arched Breezeway" },
+  { file: "precast-exterior-arched-entry.jpeg", src: "/precast/precast-exterior-arched-entry.jpeg", category: "precast", alt: "Exterior cast stone arch on a stone facade", caption: "Exterior Arch on Stone" },
+  { file: "precast-window-sills.jpeg", src: "/precast/precast-window-sills.jpeg", category: "precast", alt: "Precast concrete window sills", caption: "Precast Window Sills" },
+  { file: "precast-door-surround.jpeg", src: "/precast/precast-door-surround.jpeg", category: "precast", alt: "Interior cast stone door surround", caption: "Interior Door Surround" },
+  { file: "precast-fireplace-surround.jpeg", src: "/precast/precast-fireplace-surround.jpeg", category: "precast", alt: "White cast stone fireplace surround", caption: "Fireplace Surround" },
+  { file: "precast-fireplace-mantel.jpeg", src: "/precast/precast-fireplace-mantel.jpeg", category: "precast", alt: "Precast concrete fireplace mantel and surround", caption: "Precast Mantel & Surround" },
+  { file: "precast-fireplace-media-surround.jpeg", src: "/precast/precast-fireplace-media-surround.jpeg", category: "precast", alt: "Cast stone fireplace and media surround", caption: "Fireplace & Media Surround" },
+  { file: "precast-mantel-stone-fireplace.jpeg", src: "/precast/precast-mantel-stone-fireplace.jpeg", category: "precast", alt: "Precast mantel over a stacked stone hearth", caption: "Mantel Over Stone Hearth" },
+  { file: "precast-ornate-fireplace-surround.jpeg", src: "/precast/precast-ornate-fireplace-surround.jpeg", category: "precast", alt: "Ornate cast stone fireplace surround", caption: "Ornate Fireplace Surround" },
+  { file: "precast-arched-windows.jpeg", src: "/precast/precast-arched-windows.jpeg", category: "precast", alt: "Cast stone arched window trim", caption: "Arched Window Trim" },
 ];
 
 export const commercialClients = ["In-N-Out Burger", "Burger King", "Chase Bank", "7-Eleven"];
