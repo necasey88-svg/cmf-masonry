@@ -20,6 +20,28 @@ const customBuilds = [
   { src: "/custom-builds/custom-residential-masonry.jpeg", title: "Residential masonry build", material: "Brick and stone", span: "", tall: false },
 ];
 
+const commercialBuilds = [
+  { src: "/commercial/commercial-extramile-storefront.jpeg", title: "Retail storefront", sector: "Fuel & convenience", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/commercial/commercial-highrise-stone.jpeg", title: "High-rise stone facade", sector: "Mixed use", span: "", feature: false },
+  { src: "/commercial/commercial-multifamily-pool.jpeg", title: "Pool amenity masonry", sector: "Multi-family", span: "", feature: false },
+  { src: "/commercial/commercial-white-stone-facade.jpeg", title: "White stone exterior", sector: "Restaurant", span: "md:col-span-2", feature: false },
+  { src: "/commercial/commercial-covered-walkway.jpeg", title: "Stone column walkway", sector: "Retail", span: "", feature: false },
+  { src: "/commercial/commercial-mason-house.jpeg", title: "Mason House", sector: "Multi-family", span: "", feature: false },
+  { src: "/commercial/commercial-mixed-use-facade.jpeg", title: "Mixed-use facade", sector: "Residential & retail", span: "", feature: false },
+  { src: "/commercial/commercial-stone-storefront.jpeg", title: "Stone storefront installation", sector: "Restaurant", span: "", feature: false },
+  { src: "/commercial/commercial-brick-base.jpeg", title: "Commercial brick base", sector: "Restaurant", span: "md:col-span-2", feature: false },
+  { src: "/commercial/commercial-amenity-facade.jpeg", title: "Amenity center facade", sector: "Multi-family", span: "", feature: false },
+  { src: "/commercial/commercial-amenity-oven.jpeg", title: "Custom amenity oven", sector: "Hospitality", span: "", feature: false },
+  { src: "/commercial/commercial-entry-tower.jpeg", title: "Stone entry tower", sector: "Commercial", span: "", feature: false },
+];
+
+const commercialProof = [
+  "Multi-site capability",
+  "General contractor coordination",
+  "Code-ready execution",
+  "Southern California coverage",
+];
+
 export default function HomePage() {
   const heroImage = galleryImages.find((g) => g.file === "1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp")!;
 
@@ -229,6 +251,90 @@ export default function HomePage() {
                 </div>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Commercial portfolio */}
+      <section
+        id="commercial-portfolio"
+        className="bg-[color:var(--color-paper)] border-b border-[color:var(--color-line)] px-6 sm:px-10 lg:px-16 py-24 lg:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.8fr] gap-8 lg:gap-24 items-end mb-16">
+          <div>
+            <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold mb-5">
+              Commercial portfolio
+            </p>
+            <h2
+              className="text-4xl md:text-6xl leading-[1.02] tracking-tight text-[color:var(--color-ink)]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Built for scale.
+              <br />
+              <em className="italic text-[color:var(--color-brick)] font-normal">
+                Finished with discipline.
+              </em>
+            </h2>
+          </div>
+          <div>
+            <p
+              className="text-[color:var(--color-ink-soft)] leading-relaxed max-w-lg mb-7"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Commercial masonry requires field coordination, consistent execution, and a finish
+              that holds across every elevation and every location.
+            </p>
+            <Link
+              href="/estimate"
+              className="text-xs font-bold uppercase tracking-[0.14em] text-[color:var(--color-brick)] hover:text-[color:var(--color-ink)] transition-colors"
+            >
+              Discuss a commercial project <span aria-hidden>&#8599;</span>
+            </Link>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-[18px] [grid-auto-flow:dense]">
+          {commercialBuilds.map((build, index) => (
+            <article className={`min-w-0 ${build.span}`} key={build.src}>
+              <div
+                className={`group relative overflow-hidden bg-[color:var(--color-paper-dim)] h-[330px] ${
+                  build.feature ? "md:h-[594px]" : "md:h-[245px]"
+                }`}
+              >
+                <Image
+                  src={build.src}
+                  alt={`${build.title} masonry project by CMF Masonry`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+              </div>
+              <div className="flex gap-3.5 pt-3.5">
+                <span
+                  className="italic text-sm text-[color:var(--color-brick)]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-ink-soft)] mb-1">
+                    {build.sector}
+                  </p>
+                  <h3 className="text-lg" style={{ fontFamily: "var(--font-serif)" }}>
+                    {build.title}
+                  </h3>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 mt-[72px] border-t border-b border-[color:var(--color-line)]">
+          {commercialProof.map((item) => (
+            <span
+              key={item}
+              className="px-4 py-6 text-center border-r border-[color:var(--color-line)] last:border-r-0 text-[9px] font-bold uppercase tracking-[0.15em] text-[color:var(--color-ink)]"
+            >
+              {item}
+            </span>
           ))}
         </div>
       </section>
