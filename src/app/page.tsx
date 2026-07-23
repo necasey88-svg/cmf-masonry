@@ -3,7 +3,26 @@ import Image from "next/image";
 import ProjectCTA from "@/components/ProjectCTA";
 import { services, benefits, suppliers, galleryImages, commercialClients, BUSINESS } from "@/lib/business-data";
 
-const featured = galleryImages.slice(0, 3);
+const featured = [
+  {
+    src: "/gallery/a8f6f783-cc7f-4013-b514-008ad3d09204.webp",
+    alt: "In-N-Out Burger exterior masonry by CMF Masonry",
+    title: "In-N-Out Burger",
+    description: "Commercial masonry",
+  },
+  {
+    src: "/precast/precast-arched-entry.jpeg",
+    alt: "Architectural precast arched entry installed by CMF Masonry",
+    title: "Architectural Precast",
+    description: "Precast installation",
+  },
+  {
+    src: "/gallery/e839b1e6-2450-4a91-91df-ae5c72bb71d6.webp",
+    alt: "Single family residence masonry by CMF Masonry",
+    title: "Single Family Residence",
+    description: "Residential installation",
+  },
+];
 
 const customBuilds = [
   { src: "/custom-builds/custom-stone-residence.jpeg", title: "Custom stone residence", material: "Natural stone", span: "md:col-span-2", tall: false },
@@ -193,10 +212,10 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {featured.map((photo) => (
-            <article key={photo.file} className="group border border-[color:var(--color-line)] bg-white">
+            <article key={photo.src} className="group border border-[color:var(--color-line)] bg-white">
               <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                 <Image
-                  src={`/gallery/${photo.file}`}
+                  src={photo.src}
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
@@ -208,10 +227,10 @@ export default function HomePage() {
                   className="text-lg font-medium text-[color:var(--color-ink)] mb-2"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  {photo.caption}
+                  {photo.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
-                  {photo.category === "commercial" ? "Commercial installation" : "Residential installation"}
+                  {photo.description}
                 </p>
               </div>
             </article>
@@ -485,7 +504,7 @@ export default function HomePage() {
                   alt={`${build.title} precast by CMF Masonry`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-contain object-center"
                 />
               </div>
               <div className="flex gap-3.5 pt-3.5">
