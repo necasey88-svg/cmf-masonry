@@ -131,7 +131,7 @@ export default function HomePage() {
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 53vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute z-10 left-6 bottom-6 bg-[color:var(--color-paper)] px-6 py-5 max-w-[240px]">
             <small className="block uppercase tracking-[0.2em] text-[8px] text-[color:var(--color-brick)] mb-2.5">
@@ -200,7 +200,7 @@ export default function HomePage() {
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-6">
@@ -261,7 +261,7 @@ export default function HomePage() {
                   alt={`${build.title} by CMF Masonry`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
@@ -335,7 +335,7 @@ export default function HomePage() {
                   alt={`${build.title} masonry project by CMF Masonry`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="flex gap-3.5 pt-3.5">
@@ -411,7 +411,7 @@ export default function HomePage() {
                   alt={`${build.title} by CMF Masonry`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
@@ -485,7 +485,7 @@ export default function HomePage() {
                   alt={`${build.title} precast by CMF Masonry`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="flex gap-3.5 pt-3.5">
@@ -614,7 +614,7 @@ export default function HomePage() {
               alt="Chase Bank branch with brick and white facade"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </div>
         </div>
