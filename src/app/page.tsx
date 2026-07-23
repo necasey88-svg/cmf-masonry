@@ -219,7 +219,7 @@ export default function HomePage() {
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-contain object-center"
                 />
               </div>
               <div className="p-6">
