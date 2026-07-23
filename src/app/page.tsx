@@ -42,6 +42,36 @@ const commercialProof = [
   "Southern California coverage",
 ];
 
+const residentialBuilds = [
+  { src: "/residential/residential-white-modern-twostory.jpeg", title: "White contemporary residence", material: "Stucco & stone", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/residential/residential-traditional-stone-entry.jpeg", title: "Traditional stone entry", material: "Natural stone", span: "", feature: false },
+  { src: "/residential/residential-stone-traditional.jpeg", title: "Stone traditional home", material: "Stone & stucco", span: "", feature: false },
+  { src: "/residential/residential-modern-stucco.jpeg", title: "Modern stucco elevation", material: "Smooth stucco", span: "md:col-span-2", feature: false },
+  { src: "/residential/residential-stone-facade.jpeg", title: "Stone facade residence", material: "Natural stone", span: "", feature: false },
+  { src: "/residential/residential-stone-white-twostory.jpeg", title: "Two-story stone & stucco", material: "Stone & stucco", span: "", feature: false },
+  { src: "/residential/residential-light-stone-modern.jpeg", title: "Light stone contemporary", material: "Cut stone", span: "md:col-span-2", feature: false },
+  { src: "/residential/residential-modern-stone.jpeg", title: "Modern stone elevation", material: "Stone & stucco", span: "", feature: false },
+  { src: "/residential/residential-block-modern.jpeg", title: "Block-clad modern home", material: "Cut stone", span: "", feature: false },
+  { src: "/residential/residential-white-window-lawn.jpeg", title: "White stucco residence", material: "Smooth stucco", span: "", feature: false },
+  { src: "/residential/residential-modern-accent.jpeg", title: "Contemporary accent facade", material: "Brick & stucco", span: "", feature: false },
+  { src: "/residential/residential-stone-entry-detail.jpeg", title: "Stone entry detail", material: "Natural stone", span: "", feature: false },
+];
+
+const precastBuilds = [
+  { src: "/precast/precast-arched-entry.jpeg", title: "Arched entry surround", element: "Cast stone", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/precast/precast-arched-window-surrounds.jpeg", title: "Arched window surrounds", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-arched-breezeway.jpeg", title: "Arched breezeway", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-window-sills.jpeg", title: "Precast window sills", element: "Cast stone", span: "md:col-span-2", feature: false },
+  { src: "/precast/precast-door-surround.jpeg", title: "Interior door surround", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-exterior-arched-entry.jpeg", title: "Exterior arch on stone", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-fireplace-surround.jpeg", title: "Fireplace surround", element: "Cast stone", span: "md:col-span-2", feature: false },
+  { src: "/precast/precast-fireplace-mantel.jpeg", title: "Precast mantel & surround", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-fireplace-media-surround.jpeg", title: "Fireplace & media surround", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-mantel-stone-fireplace.jpeg", title: "Mantel over stone hearth", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-ornate-fireplace-surround.jpeg", title: "Ornate fireplace surround", element: "Cast stone", span: "", feature: false },
+  { src: "/precast/precast-arched-windows.jpeg", title: "Arched window trim", element: "Cast stone", span: "", feature: false },
+];
+
 export default function HomePage() {
   const heroImage = galleryImages.find((g) => g.file === "1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp")!;
 
@@ -335,6 +365,146 @@ export default function HomePage() {
             >
               {item}
             </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Residential portfolio */}
+      <section
+        id="residential-portfolio"
+        className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)] px-6 sm:px-10 lg:px-16 py-24 lg:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.8fr] gap-8 lg:gap-24 items-end mb-16">
+          <div>
+            <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick-light)] text-xs font-bold mb-5">
+              Residential portfolio
+            </p>
+            <h2
+              className="text-4xl md:text-6xl leading-[1.02] tracking-tight"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Homes with presence.
+              <br />
+              <em className="italic text-[color:var(--color-brick-light)] font-normal">
+                Built to be lived in.
+              </em>
+            </h2>
+          </div>
+          <p
+            className="text-[color:var(--color-paper)]/70 leading-relaxed max-w-md"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Full-home stone and stucco exteriors, entries, and details across modern and
+            traditional architecture in Southern California.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-4 [grid-auto-flow:dense]">
+          {residentialBuilds.map((build, index) => (
+            <article className={`min-w-0 ${build.span}`} key={build.src}>
+              <div
+                className={`group relative overflow-hidden bg-white/10 h-[330px] ${
+                  build.feature ? "md:h-[610px]" : "md:h-[260px]"
+                }`}
+              >
+                <Image
+                  src={build.src}
+                  alt={`${build.title} by CMF Masonry`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+              </div>
+              <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
+                <span
+                  className="italic text-sm text-[color:var(--color-brick-light)]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg mb-1" style={{ fontFamily: "var(--font-serif)" }}>
+                    {build.title}
+                  </h3>
+                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-paper)]/50">
+                    {build.material} &middot; Residential
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Precast concrete portfolio */}
+      <section
+        id="precast-portfolio"
+        className="bg-[color:var(--color-paper)] border-b border-[color:var(--color-line)] px-6 sm:px-10 lg:px-16 py-24 lg:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.8fr] gap-8 lg:gap-24 items-end mb-16">
+          <div>
+            <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold mb-5">
+              Precast concrete portfolio
+            </p>
+            <h2
+              className="text-4xl md:text-6xl leading-[1.02] tracking-tight text-[color:var(--color-ink)]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Cast for the detail.
+              <br />
+              <em className="italic text-[color:var(--color-brick)] font-normal">
+                Set to last.
+              </em>
+            </h2>
+          </div>
+          <div>
+            <p
+              className="text-[color:var(--color-ink-soft)] leading-relaxed max-w-lg mb-7"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Architectural precast surrounds, arches, window sills, entries, and fireplace mantels
+              &mdash; cast, finished, and set to sit seamlessly with the masonry around them.
+            </p>
+            <Link
+              href="/estimate"
+              className="text-xs font-bold uppercase tracking-[0.14em] text-[color:var(--color-brick)] hover:text-[color:var(--color-ink)] transition-colors"
+            >
+              Specify a precast element <span aria-hidden>&#8599;</span>
+            </Link>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-[18px] [grid-auto-flow:dense]">
+          {precastBuilds.map((build, index) => (
+            <article className={`min-w-0 ${build.span}`} key={build.src}>
+              <div
+                className={`group relative overflow-hidden bg-[color:var(--color-paper-dim)] h-[330px] ${
+                  build.feature ? "md:h-[594px]" : "md:h-[245px]"
+                }`}
+              >
+                <Image
+                  src={build.src}
+                  alt={`${build.title} precast by CMF Masonry`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+              </div>
+              <div className="flex gap-3.5 pt-3.5">
+                <span
+                  className="italic text-sm text-[color:var(--color-brick)]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-ink-soft)] mb-1">
+                    {build.element}
+                  </p>
+                  <h3 className="text-lg" style={{ fontFamily: "var(--font-serif)" }}>
+                    {build.title}
+                  </h3>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>
