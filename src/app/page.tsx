@@ -5,6 +5,21 @@ import { services, benefits, suppliers, galleryImages, commercialClients, BUSINE
 
 const featured = galleryImages.slice(0, 3);
 
+const customBuilds = [
+  { src: "/custom-builds/custom-stone-residence.jpeg", title: "Custom stone residence", material: "Natural stone", span: "md:col-span-2", tall: false },
+  { src: "/custom-builds/custom-stacked-stone-fireplace.jpeg", title: "Floor-to-ceiling fireplace", material: "Stacked stone", span: "md:row-span-2", tall: true },
+  { src: "/custom-builds/custom-brick-estate.jpeg", title: "Custom brick estate", material: "Full brick", span: "", tall: false },
+  { src: "/custom-builds/custom-limestone-exterior.jpeg", title: "Limestone exterior", material: "Cut limestone", span: "", tall: false },
+  { src: "/custom-builds/custom-stone-entry.jpeg", title: "Stone entry tower", material: "Natural stone", span: "md:row-span-2", tall: true },
+  { src: "/custom-builds/custom-brick-outdoor-fireplace.jpeg", title: "Outdoor fireplace", material: "Full brick", span: "", tall: false },
+  { src: "/custom-builds/custom-linear-stone-exterior.jpeg", title: "Linear stone facade", material: "Ledgestone", span: "md:col-span-2", tall: false },
+  { src: "/custom-builds/custom-brick-feature-wall.jpeg", title: "Interior brick feature wall", material: "Thin brick", span: "", tall: false },
+  { src: "/custom-builds/custom-rustic-fireplace.jpg", title: "Rustic fireplace surround", material: "Fieldstone", span: "", tall: false },
+  { src: "/custom-builds/custom-stone-fireplace.jpg", title: "Custom hearth and surround", material: "Stacked stone", span: "", tall: false },
+  { src: "/custom-builds/custom-brick-colonnade.jpeg", title: "Brick colonnade", material: "Full brick", span: "md:col-span-2", tall: false },
+  { src: "/custom-builds/custom-residential-masonry.jpeg", title: "Residential masonry build", material: "Brick and stone", span: "", tall: false },
+];
+
 export default function HomePage() {
   const heroImage = galleryImages.find((g) => g.file === "1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp")!;
 
@@ -146,6 +161,72 @@ export default function HomePage() {
                 <p className="text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
                   {photo.category === "commercial" ? "Commercial installation" : "Residential installation"}
                 </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Custom build portfolio */}
+      <section
+        id="custom-builds"
+        className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)] px-6 sm:px-10 lg:px-16 py-24 lg:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.8fr] gap-8 lg:gap-24 items-end mb-16">
+          <div>
+            <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick-light)] text-xs font-bold mb-5">
+              Custom build portfolio
+            </p>
+            <h2
+              className="text-4xl md:text-6xl leading-[1.02] tracking-tight"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Made for the architecture.
+              <br />
+              <em className="italic text-[color:var(--color-brick-light)] font-normal">
+                Built for the long term.
+              </em>
+            </h2>
+          </div>
+          <p
+            className="text-[color:var(--color-paper)]/70 leading-relaxed max-w-md"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            One-of-a-kind masonry installations shaped around the home, the material, and the way
+            each space is meant to live.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-4 [grid-auto-flow:dense]">
+          {customBuilds.map((build, index) => (
+            <article className={`min-w-0 ${build.span}`} key={build.src}>
+              <div
+                className={`group relative overflow-hidden bg-white/10 h-[330px] ${
+                  build.tall ? "md:h-[610px]" : "md:h-[260px]"
+                }`}
+              >
+                <Image
+                  src={build.src}
+                  alt={`${build.title} by CMF Masonry`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+              </div>
+              <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
+                <span
+                  className="italic text-sm text-[color:var(--color-brick-light)]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg mb-1" style={{ fontFamily: "var(--font-serif)" }}>
+                    {build.title}
+                  </h3>
+                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-paper)]/50">
+                    {build.material} &middot; Custom build
+                  </p>
+                </div>
               </div>
             </article>
           ))}
