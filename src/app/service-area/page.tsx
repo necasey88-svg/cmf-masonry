@@ -5,13 +5,15 @@ import { BUSINESS } from "@/lib/business-data";
 export const metadata = {
   title: "Service Area — Southern California Masonry Contractor",
   description:
-    "CMF Masonry serves Orange County, Los Angeles County, and the greater Southern California region, coordinated through our Anaheim showroom.",
+    "CMF Masonry serves Orange County, Los Angeles County, Ventura County, Bakersfield, and surrounding Southern California communities.",
   alternates: { canonical: "/service-area" },
 };
 
 const areas = [
   "Anaheim", "Orange", "Irvine", "Santa Ana", "Fullerton", "Yorba Linda",
-  "Los Angeles", "Long Beach", "Riverside", "San Bernardino", "Newport Beach", "Huntington Beach",
+  "Los Angeles", "Long Beach", "Newport Beach", "Huntington Beach",
+  "Ventura", "Oxnard", "Thousand Oaks", "Bakersfield",
+  "Riverside", "San Bernardino",
 ];
 
 export default function ServiceAreaPage() {
@@ -19,7 +21,7 @@ export default function ServiceAreaPage() {
     <>
       <PageHero
         eyebrow="Where We Work"
-        title="Serving Southern California"
+        title="From Orange County to Ventura and Bakersfield"
         description={`CMF Masonry provides stone, brick, tile, and precast installation across ${BUSINESS.serviceArea}, coordinated through our Anaheim showroom.`}
       />
 

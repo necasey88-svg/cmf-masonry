@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import GalleryGrid from "@/components/GalleryGrid";
 import ProjectCTA from "@/components/ProjectCTA";
-import { commercialClients } from "@/lib/business-data";
+import { commercialCaseStudies } from "@/lib/marketing-data";
 
 export const metadata = {
   title: "Commercial Masonry — General Contractors & Property Managers",
@@ -21,22 +22,60 @@ export default function CommercialPage() {
       />
 
       <section className="container-page py-16">
-        <h2
-          className="text-2xl font-medium text-[color:var(--color-ink)] mb-6"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          Recent commercial clients
-        </h2>
-        <ul className="flex flex-wrap gap-3 mb-14">
-          {commercialClients.map((c) => (
-            <li
-              key={c}
-              className="text-sm text-[color:var(--color-ink)] bg-[color:var(--color-paper-dim)] border border-[color:var(--color-line)] px-4 py-2"
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
+        <div className="mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-7">
+            <div>
+              <p className="uppercase tracking-[0.22em] text-[color:var(--color-brick)] text-xs font-bold mb-3">
+                Project records
+              </p>
+              <h2 className="text-3xl" style={{ fontFamily: "var(--font-serif)" }}>
+                Work for recognizable commercial brands
+              </h2>
+            </div>
+            <div className="max-w-md">
+              <p className="text-sm text-[color:var(--color-ink-soft)] mb-3">
+                Verified CMF and California Mantel team masonry installations across restaurant,
+                retail, and financial-service properties.
+              </p>
+              <Link
+                href="/services/commercial-masonry"
+                className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-brick)]"
+              >
+                Explore commercial capabilities &rarr;
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {commercialCaseStudies.map((project) => (
+              <Link
+                href={`/projects/${project.slug}`}
+                key={project.slug}
+                className="group border border-[color:var(--color-line)] bg-white"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+                  <Image
+                    src={project.images[0].src}
+                    alt={project.images[0].alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[color:var(--color-brick)] mb-2">
+                    {project.sector}
+                  </p>
+                  <h3 className="text-xl mb-4" style={{ fontFamily: "var(--font-serif)" }}>
+                    {project.client}
+                  </h3>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.12em]">
+                    View project &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         <GalleryGrid defaultTab="commercial" />
       </section>
@@ -70,6 +109,7 @@ export default function CommercialPage() {
       <ProjectCTA
         title="Bring your commercial project to CMF Masonry."
         description="Share your project scope, drawings, or spec sheet and our team will follow up with material options and a scope-of-work discussion."
+        href="/estimate?project=Commercial"
       />
 
       <section className="container-page py-12 text-center">

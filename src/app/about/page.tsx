@@ -5,7 +5,7 @@ import { BUSINESS } from "@/lib/business-data";
 export const metadata = {
   title: "About Us",
   description:
-    "CMF Masonry is the dedicated masonry division of California Mantel & Fireplace, serving Southern California with stone, brick, tile, and precast installation.",
+    "CMF Masonry brings more than 20 years of masonry experience to stone, brick, tile, and architectural precast installation across Southern California.",
   alternates: { canonical: "/about" },
 };
 
@@ -14,15 +14,16 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="Our Story"
-        title="Masonry craftsmanship, backed by decades of experience"
-        description="CMF Masonry is the dedicated masonry division of California Mantel & Fireplace — bringing the same craftsmanship and material sourcing relationships that have served Southern California homeowners and builders for decades to stone, brick, tile, and precast installation."
+        title="More than 20 years of masonry experience"
+        description="CMF Masonry brings proven field experience and established material relationships to stone, brick, tile, and architectural precast installations throughout Southern California."
       />
 
       <section className="container-page py-16 max-w-3xl">
         <p className="text-[color:var(--color-ink-soft)] leading-relaxed mb-6">
-          CMF Masonry focuses exclusively on stone, brick, tile, and precast installation —
-          fireplace surrounds, accent walls, exterior facades, and architectural details for
-          homeowners, designers, architects, and general contractors.
+          For more than 20 years, our team has completed masonry work for homes and commercial
+          properties across Southern California. CMF Masonry focuses exclusively on stone, brick,
+          tile, and precast installation — fireplace surrounds, accent walls, exterior facades,
+          and architectural details for homeowners, designers, architects, and general contractors.
         </p>
         <p className="text-[color:var(--color-ink-soft)] leading-relaxed mb-6">
           Every masonry project is coordinated through our Anaheim showroom, where our team helps
@@ -41,6 +42,20 @@ export default function AboutPage() {
           family, so if your project also includes a mantel or fireplace, our team can coordinate
           across both.
         </p>
+        <dl className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[color:var(--color-line)] border border-[color:var(--color-line)] mt-12">
+          <div className="bg-[color:var(--color-paper-warm)] p-5">
+            <dt className="text-2xl mb-1" style={{ fontFamily: "var(--font-serif)" }}>{BUSINESS.masonryExperience}</dt>
+            <dd className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">Masonry experience</dd>
+          </div>
+          <div className="bg-[color:var(--color-paper-warm)] p-5">
+            <dt className="text-2xl mb-1" style={{ fontFamily: "var(--font-serif)" }}>#{BUSINESS.licenses.california}</dt>
+            <dd className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">California license</dd>
+          </div>
+          <div className="bg-[color:var(--color-paper-warm)] p-5">
+            <dt className="text-2xl mb-1" style={{ fontFamily: "var(--font-serif)" }}>CA</dt>
+            <dd className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">Ventura to Bakersfield</dd>
+          </div>
+        </dl>
       </section>
 
       <ProjectCTA />

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/business-data";
+import { commercialCaseStudies, serviceLandings } from "@/lib/marketing-data";
 
 const staticRoutes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -15,7 +16,20 @@ const staticRoutes: { path: string; priority: number; changeFrequency: "weekly" 
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return staticRoutes.map((route) => ({
+  const dynamicRoutes = [
+    ...serviceLandings.map((service) => ({
+      path: `/services/${service.slug}`,
+      priority: 0.8,
+      changeFrequency: "monthly" as const,
+    })),
+    ...commercialCaseStudies.map((project) => ({
+      path: `/projects/${project.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
+  ];
+
+  return [...staticRoutes, ...dynamicRoutes].map((route) => ({
     url: `${SITE_URL}${route.path}`,
     lastModified: new Date(),
     changeFrequency: route.changeFrequency,

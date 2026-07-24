@@ -14,7 +14,13 @@ export default async function EstimatePage({
   searchParams: Promise<{ project?: string }>;
 }) {
   const { project } = await searchParams;
-  const defaultProjectType = project === "Commercial" || project === "Residential" ? project : "";
+  const allowedProjectTypes = [
+    "Commercial",
+    "Residential",
+    "Architectural Precast",
+    "Fireplace or Interior Feature",
+  ];
+  const defaultProjectType = project && allowedProjectTypes.includes(project) ? project : "";
 
   return (
     <>

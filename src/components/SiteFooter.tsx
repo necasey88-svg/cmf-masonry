@@ -14,8 +14,8 @@ export default function SiteFooter() {
             </span>
           </span>
           <p className="text-sm text-[color:var(--color-paper)]/60 mt-3 leading-relaxed">
-            Stone, brick, tile, and precast installations for homeowners, designers, architects,
-            and general contractors across {BUSINESS.serviceArea}.
+            More than 20 years of stone, brick, tile, and precast experience for homeowners,
+            designers, architects, and general contractors across {BUSINESS.serviceArea}.
           </p>
         </div>
 
@@ -47,6 +47,12 @@ export default function SiteFooter() {
               <a href={BUSINESS.phoneHref} className="hover:text-[color:var(--color-brick-light)]">
                 {BUSINESS.phone}
               </a>
+            </li>
+            <li className="pt-2 text-xs text-[color:var(--color-paper)]/55">
+              {BUSINESS.legalName}
+            </li>
+            <li className="text-xs text-[color:var(--color-paper)]/55">
+              CA License #{BUSINESS.licenses.california}
             </li>
           </ul>
         </div>

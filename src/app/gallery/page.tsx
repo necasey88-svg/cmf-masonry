@@ -15,7 +15,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Our Work · Southern California"
         title="Masonry Project Gallery"
-        description="From custom home fireplaces to large-scale commercial installations, our masonry team has delivered high-quality work across Southern California for over 35 years."
+        description="From custom home fireplaces to commercial installations, our masonry team brings more than 20 years of experience to projects across Southern California."
       />
 
       <section className="container-page py-16">

@@ -3,9 +3,11 @@ import Link from "next/link";
 export default function ProjectCTA({
   title = "Plan your masonry project with confidence.",
   description = "Share the project details you have now and our team will help shape the right stone, brick, or tile selection, installation path, and starting range.",
+  href = "/estimate",
 }: {
   title?: string;
   description?: string;
+  href?: string;
 }) {
   return (
     <section className="bg-[color:var(--color-paper-dim)] border-y border-[color:var(--color-line)] py-20">
@@ -18,7 +20,7 @@ export default function ProjectCTA({
         </h2>
         <p className="text-[color:var(--color-ink-soft)] mb-8 leading-relaxed">{description}</p>
         <Link
-          href="/estimate"
+          href={href}
           className="inline-block bg-[color:var(--color-brick)] hover:bg-[color:var(--color-brick-dark)] text-white px-8 py-3.5 font-medium transition-colors"
         >
           Request an Estimate

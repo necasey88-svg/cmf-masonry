@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ProjectCTA from "@/components/ProjectCTA";
 import { services, benefits } from "@/lib/business-data";
@@ -26,9 +27,17 @@ export default function ServicesPage() {
                 className="text-xl font-medium text-[color:var(--color-ink)] mb-3"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                {s.title}
+                <Link href={s.slug === "residential-commercial" ? "/commercial" : `/services/${s.slug}`}>
+                  {s.title}
+                </Link>
               </h2>
               <p className="text-[color:var(--color-ink-soft)] leading-relaxed">{s.description}</p>
+              <Link
+                href={s.slug === "residential-commercial" ? "/commercial" : `/services/${s.slug}`}
+                className="inline-block mt-6 text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-brick)]"
+              >
+                Explore service &rarr;
+              </Link>
             </div>
           ))}
         </div>

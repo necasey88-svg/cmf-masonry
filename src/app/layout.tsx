@@ -30,8 +30,16 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: BUSINESS.name,
+  legalName: BUSINESS.legalName,
   telephone: BUSINESS.phone,
   url: SITE_URL,
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "California Contractor License",
+      value: BUSINESS.licenses.california,
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: BUSINESS.address.street,
@@ -40,7 +48,7 @@ const localBusinessSchema = {
     postalCode: BUSINESS.address.zip,
     addressCountry: "US",
   },
-  areaServed: "Southern California",
+  areaServed: BUSINESS.serviceArea,
   openingHours: "Mo-Sa 09:00-17:00",
 };
 

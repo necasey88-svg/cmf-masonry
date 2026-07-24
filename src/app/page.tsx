@@ -3,7 +3,8 @@ import Image from "next/image";
 import ProjectCTA from "@/components/ProjectCTA";
 import DarkBuildGrid from "@/components/DarkBuildGrid";
 import LightBuildGrid from "@/components/LightBuildGrid";
-import { services, benefits, suppliers, commercialClients, BUSINESS } from "@/lib/business-data";
+import { services, benefits, suppliers, BUSINESS } from "@/lib/business-data";
+import { commercialCaseStudies } from "@/lib/marketing-data";
 
 const customBuilds = [
   { src: "/custom-builds/custom-stone-residence.jpeg", title: "Custom stone residence", material: "Natural stone", span: "md:col-span-2", tall: false },
@@ -112,12 +113,16 @@ export default function HomePage() {
           </div>
           <div className="flex gap-10 mt-auto pt-6 border-t border-[color:var(--color-line)] text-[10px] uppercase tracking-[0.12em] text-[color:var(--color-ink-soft)]">
             <span>
-              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Local crews</b>
-              Orange &middot; Los Angeles &middot; Southern California
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">{BUSINESS.masonryExperience}</b>
+              Masonry experience in Southern California
             </span>
             <span>
               <b className="block text-[color:var(--color-ink)] font-bold mb-1">One accountable partner</b>
               Selection &middot; Coordination &middot; Installation
+            </span>
+            <span>
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">California licensed</b>
+              CA #{BUSINESS.licenses.california}
             </span>
           </div>
         </div>
@@ -197,7 +202,7 @@ export default function HomePage() {
               copy: "Coordinated, code-ready execution for single and multi-site projects.",
             },
             {
-              href: "/services#architectural-precast",
+              href: "/services/architectural-precast",
               src: "/precast/precast-arched-entry.jpeg",
               eyebrow: "Custom architectural detail",
               title: "Precast & Cast Stone",
@@ -464,10 +469,10 @@ export default function HomePage() {
               </h3>
               <p className="text-[color:var(--color-ink-soft)] text-sm leading-relaxed max-w-[22ch]">{s.description}</p>
               <Link
-                href="/estimate"
+                href={s.slug === "residential-commercial" ? "/commercial" : `/services/${s.slug}`}
                 className="mt-auto pt-7 text-[9px] font-bold uppercase tracking-[0.17em] text-[color:var(--color-brick)]"
               >
-                Discuss your project &#8599;
+                Explore this service &#8594;
               </Link>
             </div>
           ))}
@@ -516,12 +521,14 @@ export default function HomePage() {
               properties across Southern California.
             </p>
             <ul className="flex flex-wrap gap-3 mb-8">
-              {commercialClients.map((c) => (
-                <li
-                  key={c}
-                  className="text-sm text-[color:var(--color-ink)] bg-[color:var(--color-paper-dim)] border border-[color:var(--color-line)] px-4 py-2"
-                >
-                  {c}
+              {commercialCaseStudies.map((project) => (
+                <li key={project.slug}>
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="block text-sm text-[color:var(--color-ink)] bg-[color:var(--color-paper-dim)] border border-[color:var(--color-line)] px-4 py-2 hover:border-[color:var(--color-brick)]"
+                  >
+                    {project.client}
+                  </Link>
                 </li>
               ))}
             </ul>

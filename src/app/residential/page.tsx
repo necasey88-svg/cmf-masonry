@@ -32,9 +32,15 @@ export default function ResidentialPage() {
                 className="text-lg font-medium text-[color:var(--color-ink)] mb-3"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                {s.title}
+                <Link href={`/services/${s.slug}`}>{s.title}</Link>
               </h2>
               <p className="text-[color:var(--color-ink-soft)] text-sm leading-relaxed">{s.description}</p>
+              <Link
+                href={`/services/${s.slug}`}
+                className="inline-block mt-5 text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-brick)]"
+              >
+                Explore service &rarr;
+              </Link>
             </div>
           ))}
         </div>
@@ -45,6 +51,7 @@ export default function ResidentialPage() {
       <ProjectCTA
         title="Start planning your home's masonry project."
         description="Tell us about your fireplace, accent wall, or exterior project and we'll help you choose materials and next steps."
+        href="/estimate?project=Residential"
       />
 
       <section className="container-page py-12 text-center">

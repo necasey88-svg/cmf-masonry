@@ -2,12 +2,13 @@ export const SITE_URL = "https://cmfmasonry.com";
 
 export const BUSINESS = {
   name: "CMF Masonry",
-  legalName: "CMF Masonry (a division of California Mantel & Fireplace)",
+  legalName: "California Mantel & Fireplace dba CMF Masonry",
   // CallRail tracking number dedicated to CMF Masonry ("Google Ads Assets - Masonry"
   // pool, company 736627927) — distinct from the shared Anaheim showroom line
   // (714) 908-7388, so masonry call volume is attributable on its own.
   phone: "(714) 886-3179",
   phoneHref: "tel:7148863179",
+  masonryExperience: "20+ years",
   address: {
     street: "1430 S Anaheim Blvd",
     city: "Anaheim",
@@ -15,9 +16,12 @@ export const BUSINESS = {
     zip: "92805",
   },
   hours: "Mon–Sat: 9:00 AM – 5:00 PM",
+  licenses: {
+    california: "675006",
+  },
   mapQuery: "1430 S Anaheim Blvd, Anaheim, CA 92805",
   serviceArea:
-    "Orange County, Los Angeles County, and the greater Southern California region",
+    "Orange County, Los Angeles County, Ventura County, Bakersfield, and surrounding Southern California communities",
   parentSite: "https://calmantel.com",
 };
 
@@ -59,7 +63,6 @@ export const services: MasonryService[] = [
       "We serve homeowners, interior designers, architects, and general contractors on projects of every scale — from single-room renovations to large-scale commercial and multi-unit residential installations.",
   },
 ];
-
 export const benefits = [
   {
     title: "Structural Strength",
@@ -224,5 +227,3 @@ export const galleryImages: GalleryImage[] = [
   { file: "precast-ornate-fireplace-surround.jpeg", src: "/precast/precast-ornate-fireplace-surround.jpeg", category: "precast", alt: "Ornate cast stone fireplace surround", caption: "Ornate Fireplace Surround" },
   { file: "precast-arched-windows.jpeg", src: "/precast/precast-arched-windows.jpeg", category: "precast", alt: "Cast stone arched window trim", caption: "Arched Window Trim" },
 ];
-
-export const commercialClients = ["In-N-Out Burger", "Burger King", "Chase Bank", "7-Eleven"];

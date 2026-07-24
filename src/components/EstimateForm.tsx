@@ -102,6 +102,25 @@ export default function EstimateForm({ defaultProjectType = "" }: { defaultProje
       </div>
 
       <div>
+        <label htmlFor="role" className="block text-sm font-medium text-[color:var(--color-ink)] mb-1.5">
+          I&apos;m a
+        </label>
+        <select
+          id="role"
+          name="role"
+          className="w-full border border-[color:var(--color-line)] px-3.5 py-2.5 text-sm bg-white"
+        >
+          <option value="">Select one</option>
+          <option value="Homeowner">Homeowner</option>
+          <option value="Interior Designer">Interior designer</option>
+          <option value="Architect">Architect</option>
+          <option value="General Contractor">General contractor</option>
+          <option value="Developer or Property Team">Developer or property team</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="project_type" className="block text-sm font-medium text-[color:var(--color-ink)] mb-1.5">
           Project type
         </label>
@@ -113,7 +132,9 @@ export default function EstimateForm({ defaultProjectType = "" }: { defaultProje
         >
           <option value="">Select one</option>
           <option value="Residential">Residential</option>
-          <option value="Commercial">Commercial</option>
+          <option value="Commercial">Commercial or multi-site</option>
+          <option value="Architectural Precast">Architectural precast or cast stone</option>
+          <option value="Fireplace or Interior Feature">Fireplace or interior feature</option>
         </select>
       </div>
 
@@ -126,20 +147,20 @@ export default function EstimateForm({ defaultProjectType = "" }: { defaultProje
           name="message"
           rows={5}
           required
-          placeholder="Tell us about your project — location, scope, materials you're considering, timeline."
+          placeholder="Tell us the project location, scope, materials or specifications, approximate timeline, and anything already designed or selected."
           className="w-full border border-[color:var(--color-line)] px-3.5 py-2.5 text-sm bg-white"
         />
       </div>
 
       <div>
         <label htmlFor="photos" className="block text-sm font-medium text-[color:var(--color-ink)] mb-1.5">
-          Photos (optional, up to 5)
+          Photos, plans, or specifications (optional, up to 5)
         </label>
         <input
           id="photos"
           name="attachment"
           type="file"
-          accept="image/*"
+          accept="image/*,.pdf"
           multiple
           className="w-full border border-[color:var(--color-line)] px-3.5 py-2.5 text-sm bg-white file:mr-4 file:border-0 file:bg-[color:var(--color-paper-dim)] file:px-3 file:py-1.5"
         />
