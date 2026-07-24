@@ -23,47 +23,52 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-[color:var(--color-paper)]/95 backdrop-blur border-b border-[color:var(--color-line)]">
-      <div className="container-page flex items-center justify-between h-[72px] lg:h-20">
-        <Link href="/" className="flex items-center gap-3">
-          <BrandMark className="w-8 h-8 lg:w-9 lg:h-9" />
+    <header className="sticky top-0 z-40 bg-[color:var(--color-paper)] border-b-4 border-[color:var(--color-ink)] shadow-[0_8px_24px_rgba(36,37,33,0.07)]">
+      <div className="container-page flex items-center justify-between h-[76px] lg:h-24">
+        <Link href="/" className="flex items-center gap-3.5 shrink-0" aria-label="CMF Masonry home">
+          <BrandMark className="w-9 h-9 lg:w-11 lg:h-11" />
           <span className="flex flex-col leading-none">
             <span
-              className="text-xl sm:text-2xl tracking-tight text-[color:var(--color-ink)]"
+              className="text-[22px] sm:text-2xl lg:text-[28px] tracking-[-0.025em] text-[color:var(--color-ink)]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               CMF <b className="font-normal">Masonry</b>
             </span>
-            <span className="hidden sm:block text-[11px] uppercase tracking-[0.2em] text-[color:var(--color-ink-soft)] mt-0.5">
+            <span className="hidden sm:block text-[10px] font-bold uppercase tracking-[0.22em] text-[color:var(--color-ink-soft)] mt-1.5">
               Stone &middot; Brick &middot; Tile &middot; Precast
             </span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 mx-8" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-[color:var(--color-ink-soft)] hover:text-[color:var(--color-brick)] transition-colors"
+              className="relative py-3 text-[11px] font-bold uppercase tracking-[0.1em] text-[color:var(--color-ink)] after:absolute after:inset-x-0 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-[color:var(--color-brick)] after:transition-transform hover:text-[color:var(--color-brick)] hover:after:scale-x-100 focus-visible:after:scale-x-100"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-5">
-          <a
-            href={BUSINESS.phoneHref}
-            className="text-xs font-bold uppercase tracking-[0.08em] text-[color:var(--color-ink)] hover:text-[color:var(--color-brick)] transition-colors"
-          >
-            Call {BUSINESS.phone}
-          </a>
+        <div className="hidden lg:flex items-stretch gap-0 border-l border-[color:var(--color-line)] pl-5">
+          <div className="hidden xl:flex flex-col justify-center pr-5">
+            <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[color:var(--color-ink-soft)] mb-1">
+              Speak with CMF
+            </span>
+            <a
+              href={BUSINESS.phoneHref}
+              className="text-sm font-bold text-[color:var(--color-ink)] hover:text-[color:var(--color-brick)] transition-colors"
+            >
+              {BUSINESS.phone}
+            </a>
+          </div>
           <Link
             href="/estimate"
-            className="bg-[color:var(--color-brick)] hover:bg-[color:var(--color-brick-dark)] text-white text-sm font-medium px-5 py-2.5 transition-colors"
+            className="flex items-center bg-[color:var(--color-brick)] hover:bg-[color:var(--color-brick-dark)] text-white text-[11px] font-bold uppercase tracking-[0.1em] px-6 py-4 transition-colors"
           >
-            Request Estimate
+            Request Estimate <span aria-hidden className="ml-2">&#8599;</span>
           </Link>
         </div>
 
@@ -84,7 +89,7 @@ export default function SiteHeader() {
       {open && (
         <div
           id="mobile-navigation"
-          className="lg:hidden border-t border-[color:var(--color-line)] bg-[color:var(--color-paper)] max-h-[calc(100vh-72px)] overflow-y-auto"
+          className="lg:hidden border-t border-[color:var(--color-line)] bg-[color:var(--color-paper)] max-h-[calc(100vh-76px)] overflow-y-auto"
         >
           <nav className="container-page py-6" aria-label="Mobile navigation">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--color-brick)] mb-2">
