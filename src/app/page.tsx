@@ -4,7 +4,7 @@ import ProjectCTA from "@/components/ProjectCTA";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import DarkBuildGrid from "@/components/DarkBuildGrid";
 import LightBuildGrid from "@/components/LightBuildGrid";
-import { services, benefits, suppliers, galleryImages, commercialClients, BUSINESS } from "@/lib/business-data";
+import { services, benefits, suppliers, commercialClients, BUSINESS } from "@/lib/business-data";
 
 const featured = [
   {
@@ -95,8 +95,6 @@ const precastBuilds = [
 ];
 
 export default function HomePage() {
-  const heroImage = galleryImages.find((g) => g.file === "1fee6c1c-57d4-43d0-94a6-f5d3646105e9.webp")!;
-
   return (
     <>
       {/* Hero */}
@@ -148,8 +146,8 @@ export default function HomePage() {
         </div>
         <div className="group relative min-h-[420px] lg:min-h-[670px] overflow-hidden">
           <Image
-            src={`/gallery/${heroImage.file}`}
-            alt={heroImage.alt}
+            src="/gallery/single-family-residence-dusk.png"
+            alt="Single family residence with stone masonry at dusk"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 53vw"
