@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { galleryImages, type GalleryImage } from "@/lib/business-data";
+import Lightbox, { useLightbox } from "@/components/Lightbox";
 
 type Tab = "all" | "residential" | "commercial" | "precast";
 
@@ -20,6 +21,8 @@ export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }
       : activeTab === "precast"
       ? precast
       : galleryImages;
+
+  const lightbox = useLightbox(photos.length);
 
   return (
     <>
@@ -47,8 +50,14 @@ export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {photos.map((photo) => (
-          <div key={photo.file} className="group relative overflow-hidden bg-stone-100 aspect-[4/3]">
+        {photos.map((photo, index) => (
+          <button
+            type="button"
+            key={photo.file}
+            onClick={() => lightbox.open(index)}
+            aria-label={`View larger photo: ${photo.caption ?? photo.alt}`}
+            className="group relative block w-full overflow-hidden bg-stone-100 aspect-[4/3] cursor-zoom-in"
+          >
             <Image
               src={photo.src ?? `/gallery/${photo.file}`}
               alt={photo.alt}
@@ -57,12 +66,24 @@ export default function GalleryGrid({ defaultTab = "all" }: { defaultTab?: Tab }
               className="object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-sm font-medium translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p className="absolute bottom-0 left-0 right-0 px-4 py-3 text-white text-sm font-medium translate-y-full group-hover:translate-y-0 transition-transform duration-300 text-left">
               {photo.caption}
             </p>
-          </div>
+          </button>
         ))}
       </div>
+
+      <Lightbox
+        photos={photos.map((photo) => ({
+          src: photo.src ?? `/gallery/${photo.file}`,
+          alt: photo.alt,
+          title: photo.caption,
+        }))}
+        index={lightbox.index}
+        onClose={lightbox.close}
+        onPrev={lightbox.prev}
+        onNext={lightbox.next}
+      />
     </>
   );
 }

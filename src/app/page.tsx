@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import ProjectCTA from "@/components/ProjectCTA";
+import FeaturedGrid from "@/components/FeaturedGrid";
+import DarkBuildGrid from "@/components/DarkBuildGrid";
+import LightBuildGrid from "@/components/LightBuildGrid";
 import { services, benefits, suppliers, galleryImages, commercialClients, BUSINESS } from "@/lib/business-data";
 
 const featured = [
@@ -210,32 +213,7 @@ export default function HomePage() {
             View Gallery
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {featured.map((photo) => (
-            <article key={photo.src} className="group border border-[color:var(--color-line)] bg-white">
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-contain object-center"
-                />
-              </div>
-              <div className="p-6">
-                <h3
-                  className="text-lg font-medium text-[color:var(--color-ink)] mb-2"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {photo.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-[color:var(--color-ink-soft)]">
-                  {photo.description}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <FeaturedGrid photos={featured} />
       </section>
 
       {/* Custom build portfolio */}
@@ -267,41 +245,17 @@ export default function HomePage() {
             each space is meant to live.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-4 [grid-auto-flow:dense]">
-          {customBuilds.map((build, index) => (
-            <article className={`min-w-0 ${build.span}`} key={build.src}>
-              <div
-                className={`group relative overflow-hidden bg-white/10 h-[330px] ${
-                  build.tall ? "md:h-[610px]" : "md:h-[260px]"
-                }`}
-              >
-                <Image
-                  src={build.src}
-                  alt={`${build.title} by CMF Masonry`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
-                <span
-                  className="italic text-sm text-[color:var(--color-brick-light)]"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg mb-1" style={{ fontFamily: "var(--font-serif)" }}>
-                    {build.title}
-                  </h3>
-                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-paper)]/50">
-                    {build.material} &middot; Custom build
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <DarkBuildGrid
+          items={customBuilds.map((build) => ({
+            src: build.src,
+            alt: `${build.title} by CMF Masonry`,
+            title: build.title,
+            subtitle: build.material,
+            span: build.span,
+            big: build.tall,
+          }))}
+          subtitleSuffix="Custom build"
+        />
       </section>
 
       {/* Commercial portfolio */}
@@ -341,41 +295,17 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-[18px] [grid-auto-flow:dense]">
-          {commercialBuilds.map((build, index) => (
-            <article className={`min-w-0 ${build.span}`} key={build.src}>
-              <div
-                className={`group relative overflow-hidden bg-[color:var(--color-paper-dim)] h-[330px] ${
-                  build.feature ? "md:h-[594px]" : "md:h-[245px]"
-                }`}
-              >
-                <Image
-                  src={build.src}
-                  alt={`${build.title} masonry project by CMF Masonry`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="flex gap-3.5 pt-3.5">
-                <span
-                  className="italic text-sm text-[color:var(--color-brick)]"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-ink-soft)] mb-1">
-                    {build.sector}
-                  </p>
-                  <h3 className="text-lg" style={{ fontFamily: "var(--font-serif)" }}>
-                    {build.title}
-                  </h3>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <LightBuildGrid
+          items={commercialBuilds.map((build) => ({
+            src: build.src,
+            alt: `${build.title} masonry project by CMF Masonry`,
+            title: build.title,
+            subtitle: build.sector,
+            span: build.span,
+            big: build.feature,
+          }))}
+          fit="cover"
+        />
         <div className="grid grid-cols-2 md:grid-cols-4 mt-[72px] border-t border-b border-[color:var(--color-line)]">
           {commercialProof.map((item) => (
             <span
@@ -417,41 +347,17 @@ export default function HomePage() {
             traditional architecture in Southern California.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-4 [grid-auto-flow:dense]">
-          {residentialBuilds.map((build, index) => (
-            <article className={`min-w-0 ${build.span}`} key={build.src}>
-              <div
-                className={`group relative overflow-hidden bg-white/10 h-[330px] ${
-                  build.feature ? "md:h-[610px]" : "md:h-[260px]"
-                }`}
-              >
-                <Image
-                  src={build.src}
-                  alt={`${build.title} by CMF Masonry`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="flex gap-4 pt-4 mt-3 border-t border-[color:var(--color-paper)]/20">
-                <span
-                  className="italic text-sm text-[color:var(--color-brick-light)]"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg mb-1" style={{ fontFamily: "var(--font-serif)" }}>
-                    {build.title}
-                  </h3>
-                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-paper)]/50">
-                    {build.material} &middot; Residential
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <DarkBuildGrid
+          items={residentialBuilds.map((build) => ({
+            src: build.src,
+            alt: `${build.title} by CMF Masonry`,
+            title: build.title,
+            subtitle: build.material,
+            span: build.span,
+            big: build.feature,
+          }))}
+          subtitleSuffix="Residential"
+        />
       </section>
 
       {/* Precast concrete portfolio */}
@@ -491,41 +397,17 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-9 gap-x-[18px] [grid-auto-flow:dense]">
-          {precastBuilds.map((build, index) => (
-            <article className={`min-w-0 ${build.span}`} key={build.src}>
-              <div
-                className={`group relative overflow-hidden bg-[color:var(--color-paper-dim)] h-[330px] ${
-                  build.feature ? "md:h-[594px]" : "md:h-[245px]"
-                }`}
-              >
-                <Image
-                  src={build.src}
-                  alt={`${build.title} precast by CMF Masonry`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain object-center"
-                />
-              </div>
-              <div className="flex gap-3.5 pt-3.5">
-                <span
-                  className="italic text-sm text-[color:var(--color-brick)]"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p className="text-[8px] uppercase tracking-[0.18em] text-[color:var(--color-ink-soft)] mb-1">
-                    {build.element}
-                  </p>
-                  <h3 className="text-lg" style={{ fontFamily: "var(--font-serif)" }}>
-                    {build.title}
-                  </h3>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        <LightBuildGrid
+          items={precastBuilds.map((build) => ({
+            src: build.src,
+            alt: `${build.title} precast by CMF Masonry`,
+            title: build.title,
+            subtitle: build.element,
+            span: build.span,
+            big: build.feature,
+          }))}
+          fit="contain"
+        />
       </section>
 
       {/* Services */}
