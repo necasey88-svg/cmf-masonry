@@ -53,7 +53,7 @@ export default function AboutPage() {
           </div>
           <div className="bg-[color:var(--color-paper-warm)] p-5">
             <dt className="text-2xl mb-1" style={{ fontFamily: "var(--font-serif)" }}>CA</dt>
-            <dd className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">Ventura to Bakersfield</dd>
+            <dd className="text-[10px] font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">All of Southern California</dd>
           </div>
         </dl>
       </section>

@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const residentialServices = services.filter((s) =>
-  ["stone-veneer", "tile-masonry", "brick-veneer"].includes(s.slug)
+  ["stone-veneer", "tile-masonry", "brick-veneer", "architectural-precast"].includes(s.slug)
 );
 
 export default function ResidentialPage() {
@@ -25,7 +25,7 @@ export default function ResidentialPage() {
       />
 
       <section className="container-page py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {residentialServices.map((s) => (
             <div key={s.slug} className="border border-[color:var(--color-line)] p-7">
               <h2

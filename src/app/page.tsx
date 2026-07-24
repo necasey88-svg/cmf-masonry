@@ -39,7 +39,7 @@ const commercialBuilds = [
 const commercialProof = [
   "Multi-site capability",
   "General contractor coordination",
-  "Code-ready execution",
+  "Spec-driven execution",
   "Southern California coverage",
 ];
 
@@ -199,7 +199,7 @@ export default function HomePage() {
               src: "/gallery/a8f6f783-cc7f-4013-b514-008ad3d09204.webp",
               eyebrow: "For GCs & property teams",
               title: "Commercial Masonry",
-              copy: "Coordinated, code-ready execution for single and multi-site projects.",
+              copy: "Coordinated, spec-driven execution for single and multi-site projects.",
             },
             {
               href: "/services/architectural-precast",

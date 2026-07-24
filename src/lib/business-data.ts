@@ -21,7 +21,7 @@ export const BUSINESS = {
   },
   mapQuery: "1430 S Anaheim Blvd, Anaheim, CA 92805",
   serviceArea:
-    "Orange County, Los Angeles County, Ventura County, Bakersfield, and surrounding Southern California communities",
+    "Los Angeles, Orange, Riverside, and San Diego counties, and the rest of Southern California",
   parentSite: "https://calmantel.com",
 };
 

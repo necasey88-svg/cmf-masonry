@@ -34,7 +34,7 @@ export default function CommercialPage() {
             </div>
             <div className="max-w-md">
               <p className="text-sm text-[color:var(--color-ink-soft)] mb-3">
-                Verified CMF and California Mantel team masonry installations across restaurant,
+                Verified CMF team masonry installations across restaurant,
                 retail, and financial-service properties.
               </p>
               <Link
