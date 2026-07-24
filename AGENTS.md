@@ -29,3 +29,12 @@ git reset --hard claude-local/main   # cross-history reset is fine; run only on 
 From then on: edit here, commit locally, and tell Claude "Codex has N commits ready."
 Claude then fetches Codex's repo, cherry-picks the new commits, `npx tsc --noEmit`
 + `npm run build`, and `git push origin main` (which deploys).
+
+## Known gotcha: named HTML entities in JSX text
+
+Next's JSX transform decodes some named entities in JSX children (`&rarr;`, `&amp;`,
+`&middot;` all work here) but not others — `&nearr;` silently renders as the literal
+text `&nearr;` instead of ↗, with no build/typecheck error. Confirmed via rendered
+DOM `innerHTML`, not just reading the source. Use numeric character references
+(`&#8599;` for ↗, `&#8595;` for ↓, etc. — already used throughout this codebase)
+instead of named entities you haven't confirmed render correctly.
