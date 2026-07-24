@@ -99,9 +99,9 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="border-b border-[color:var(--color-line)] grid grid-cols-1 lg:grid-cols-[47fr_53fr]">
-        <div className="flex flex-col px-6 sm:px-10 lg:px-16 py-16 lg:py-20">
+        <div className="flex flex-col px-6 sm:px-10 lg:px-16 py-12 sm:py-16 lg:py-20">
           <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold mb-6">
-            Masonry Specialists &middot; Southern California
+            Residential + Commercial Masonry &middot; Southern California
           </p>
           <h1
             className="text-5xl md:text-7xl leading-[0.98] tracking-tight text-[color:var(--color-ink)] mb-8"
@@ -109,15 +109,14 @@ export default function HomePage() {
           >
             Crafted in stone.
             <br />
-            <em className="italic text-[color:var(--color-brick)] font-normal">Grounded in place.</em>
+            <em className="italic text-[color:var(--color-brick)] font-normal">Built to endure.</em>
           </h1>
           <p
             className="text-[color:var(--color-ink-soft)] max-w-xl leading-relaxed mb-9 text-lg"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            CMF Masonry brings architectural intention and disciplined craft to stone, brick, tile,
-            and precast — across homes, hospitality, retail, and commercial spaces in{" "}
-            {BUSINESS.serviceArea}.
+            Expert stone, brick, tile, and architectural precast installation for homes,
+            restaurants, retail, and commercial properties across {BUSINESS.serviceArea}.
           </p>
           <div className="flex flex-wrap items-center gap-8 mb-12">
             <Link
@@ -130,17 +129,17 @@ export default function HomePage() {
               href="/gallery"
               className="text-xs font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink)] border-b border-[color:var(--color-ink)] pb-0.5"
             >
-              Explore our work <span className="text-[color:var(--color-brick)]">&#8595;</span>
+              View completed projects <span className="text-[color:var(--color-brick)]">&#8595;</span>
             </Link>
           </div>
           <div className="flex gap-10 mt-auto pt-6 border-t border-[color:var(--color-line)] text-[10px] uppercase tracking-[0.12em] text-[color:var(--color-ink-soft)]">
             <span>
-              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Southern California</b>
-              Orange &middot; Los Angeles &middot; Beyond
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Local crews</b>
+              Orange &middot; Los Angeles &middot; Southern California
             </span>
             <span>
-              <b className="block text-[color:var(--color-ink)] font-bold mb-1">Residential + commercial</b>
-              One standard of craft
+              <b className="block text-[color:var(--color-ink)] font-bold mb-1">One accountable partner</b>
+              Selection &middot; Coordination &middot; Installation
             </span>
           </div>
         </div>
@@ -187,6 +186,78 @@ export default function HomePage() {
             right material, a resolved detail, and a crew that understands how every line
             contributes to the whole.
           </p>
+        </div>
+      </section>
+
+      {/* Project paths */}
+      <section className="container-page py-20 lg:py-24">
+        <div className="max-w-3xl mb-10">
+          <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick)] text-xs font-bold mb-4">
+            Start with your project
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl leading-tight text-[color:var(--color-ink)]"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            The right expertise, from one room to an entire property.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {[
+            {
+              href: "/residential",
+              src: "/gallery/single-family-residence-dusk.png",
+              eyebrow: "For homeowners & designers",
+              title: "Residential Masonry",
+              copy: "Fireplaces, feature walls, entries, and full exterior installations.",
+            },
+            {
+              href: "/commercial",
+              src: "/gallery/a8f6f783-cc7f-4013-b514-008ad3d09204.webp",
+              eyebrow: "For GCs & property teams",
+              title: "Commercial Masonry",
+              copy: "Coordinated, code-ready execution for single and multi-site projects.",
+            },
+            {
+              href: "/services#architectural-precast",
+              src: "/precast/precast-arched-entry.jpeg",
+              eyebrow: "Custom architectural detail",
+              title: "Precast & Cast Stone",
+              copy: "Arches, surrounds, sills, mantels, and integrated architectural elements.",
+            },
+          ].map((path) => (
+            <Link
+              href={path.href}
+              key={path.title}
+              className="group border border-[color:var(--color-line)] bg-[color:var(--color-paper-warm)]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-paper-dim)]">
+                <Image
+                  src={path.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className={`transition-transform duration-500 group-hover:scale-[1.025] ${
+                    path.title === "Precast & Cast Stone" ? "object-contain" : "object-cover"
+                  }`}
+                />
+              </div>
+              <div className="p-6">
+                <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[color:var(--color-brick)] mb-2">
+                  {path.eyebrow}
+                </p>
+                <h3 className="text-2xl mb-3" style={{ fontFamily: "var(--font-serif)" }}>
+                  {path.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[color:var(--color-ink-soft)] mb-5">
+                  {path.copy}
+                </p>
+                <span className="text-xs font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink)]">
+                  Explore <span className="text-[color:var(--color-brick)]" aria-hidden>&rarr;</span>
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -244,7 +315,7 @@ export default function HomePage() {
           </p>
         </div>
         <DarkBuildGrid
-          items={customBuilds.map((build) => ({
+          items={customBuilds.slice(0, 6).map((build) => ({
             src: build.src,
             alt: `${build.title} by CMF Masonry`,
             title: build.title,
@@ -294,7 +365,7 @@ export default function HomePage() {
           </div>
         </div>
         <LightBuildGrid
-          items={commercialBuilds.map((build) => ({
+          items={commercialBuilds.slice(0, 6).map((build) => ({
             src: build.src,
             alt: `${build.title} masonry project by CMF Masonry`,
             title: build.title,
@@ -346,7 +417,7 @@ export default function HomePage() {
           </p>
         </div>
         <DarkBuildGrid
-          items={residentialBuilds.map((build) => ({
+          items={residentialBuilds.slice(0, 6).map((build) => ({
             src: build.src,
             alt: `${build.title} by CMF Masonry`,
             title: build.title,
@@ -396,7 +467,7 @@ export default function HomePage() {
           </div>
         </div>
         <LightBuildGrid
-          items={precastBuilds.map((build) => ({
+          items={precastBuilds.slice(0, 6).map((build) => ({
             src: build.src,
             alt: `${build.title} precast by CMF Masonry`,
             title: build.title,
@@ -547,7 +618,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ProjectCTA />
+      {/* Process */}
+      <section className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)] py-20 lg:py-24">
+        <div className="container-page">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.6fr] gap-10 lg:gap-20">
+            <div>
+              <p className="uppercase tracking-[0.26em] text-[color:var(--color-brick-light)] text-xs font-bold mb-4">
+                How it works
+              </p>
+              <h2 className="text-4xl lg:text-5xl leading-tight" style={{ fontFamily: "var(--font-serif)" }}>
+                A clear path from idea to installation.
+              </h2>
+            </div>
+            <ol className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {[
+                ["01", "Share the scope", "Send photos, plans, measurements, or the project details you have now."],
+                ["02", "Align materials & approach", "We clarify the finish, installation requirements, schedule, and estimate."],
+                ["03", "Build with discipline", "Our crews coordinate the work and complete the masonry to the agreed standard."],
+              ].map(([number, title, copy]) => (
+                <li key={number} className="border-t border-white/20 pt-5">
+                  <span className="text-[color:var(--color-brick-light)] italic" style={{ fontFamily: "var(--font-serif)" }}>
+                    {number}
+                  </span>
+                  <h3 className="text-xl mt-5 mb-3" style={{ fontFamily: "var(--font-serif)" }}>{title}</h3>
+                  <p className="text-sm leading-relaxed text-white/65">{copy}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <ProjectCTA
+        title="Tell us what you're building."
+        description="Share your project type, location, photos, or plans. CMF will review the scope and help you identify the right next step."
+      />
     </>
   );
 }

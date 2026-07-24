@@ -21,7 +21,7 @@ export default function ProjectCTA({
           href="/estimate"
           className="inline-block bg-[color:var(--color-brick)] hover:bg-[color:var(--color-brick-dark)] text-white px-8 py-3.5 font-medium transition-colors"
         >
-          Request Project Guidance
+          Request an Estimate
         </Link>
       </div>
     </section>

@@ -9,7 +9,7 @@ import { BUSINESS, SITE_URL } from "@/lib/business-data";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CMF Masonry | Crafted in Stone. Grounded in Place.",
+    default: "CMF Masonry | Crafted in Stone. Built to Endure.",
     template: "%s | CMF Masonry",
   },
   description:
@@ -57,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col pb-[52px] lg:pb-0">
         <AnalyticsScripts />
         <AnalyticsEvents />
         <SiteHeader />

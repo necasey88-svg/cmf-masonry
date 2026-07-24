@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <section className="container-page py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((s) => (
-            <div key={s.slug} className="border border-[color:var(--color-line)] p-8">
+            <div id={s.slug} key={s.slug} className="scroll-mt-28 border border-[color:var(--color-line)] p-8">
               <h2
                 className="text-xl font-medium text-[color:var(--color-ink)] mb-3"
                 style={{ fontFamily: "var(--font-serif)" }}

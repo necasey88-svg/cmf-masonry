@@ -23,12 +23,15 @@ export default function SiteFooter() {
           <h3 className="text-sm uppercase tracking-[0.15em] text-[color:var(--color-paper)]/50 mb-4">
             Explore
           </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             <li><Link href="/services" className="hover:text-[color:var(--color-brick-light)]">Services</Link></li>
-            <li><Link href="/gallery" className="hover:text-[color:var(--color-brick-light)]">Gallery</Link></li>
-            <li><Link href="/commercial" className="hover:text-[color:var(--color-brick-light)]">Commercial</Link></li>
             <li><Link href="/residential" className="hover:text-[color:var(--color-brick-light)]">Residential</Link></li>
+            <li><Link href="/commercial" className="hover:text-[color:var(--color-brick-light)]">Commercial</Link></li>
+            <li><Link href="/gallery" className="hover:text-[color:var(--color-brick-light)]">Our Work</Link></li>
+            <li><Link href="/about" className="hover:text-[color:var(--color-brick-light)]">About</Link></li>
             <li><Link href="/suppliers" className="hover:text-[color:var(--color-brick-light)]">Suppliers</Link></li>
+            <li><Link href="/service-area" className="hover:text-[color:var(--color-brick-light)]">Service Area</Link></li>
+            <li><Link href="/contact" className="hover:text-[color:var(--color-brick-light)]">Contact</Link></li>
           </ul>
         </div>
 
