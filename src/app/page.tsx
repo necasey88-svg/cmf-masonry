@@ -1,31 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import ProjectCTA from "@/components/ProjectCTA";
-import FeaturedGrid from "@/components/FeaturedGrid";
 import DarkBuildGrid from "@/components/DarkBuildGrid";
 import LightBuildGrid from "@/components/LightBuildGrid";
 import { services, benefits, suppliers, commercialClients, BUSINESS } from "@/lib/business-data";
-
-const featured = [
-  {
-    src: "/gallery/a8f6f783-cc7f-4013-b514-008ad3d09204.webp",
-    alt: "In-N-Out Burger exterior masonry by CMF Masonry",
-    title: "In-N-Out Burger",
-    description: "Commercial masonry",
-  },
-  {
-    src: "/precast/precast-arched-entry.jpeg",
-    alt: "Architectural precast arched entry installed by CMF Masonry",
-    title: "Architectural Precast",
-    description: "Precast installation",
-  },
-  {
-    src: "/gallery/e839b1e6-2450-4a91-91df-ae5c72bb71d6.webp",
-    alt: "Single family residence masonry by CMF Masonry",
-    title: "Single Family Residence",
-    description: "Residential installation",
-  },
-];
 
 const customBuilds = [
   { src: "/custom-builds/custom-stone-residence.jpeg", title: "Custom stone residence", material: "Natural stone", span: "md:col-span-2", tall: false },
@@ -259,30 +237,6 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* Featured work */}
-      <section className="container-page py-20">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-          <div>
-            <p className="uppercase tracking-[0.28em] text-[color:var(--color-brick)] text-xs mb-3">
-              Recent Work
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-medium text-[color:var(--color-ink)]"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Built for interiors, exteriors, and commercial scale.
-            </h2>
-          </div>
-          <Link
-            href="/gallery"
-            className="text-sm uppercase tracking-[0.18em] text-[color:var(--color-brick)] hover:text-[color:var(--color-ink)] transition-colors"
-          >
-            View Gallery
-          </Link>
-        </div>
-        <FeaturedGrid photos={featured} />
       </section>
 
       {/* Custom build portfolio */}
