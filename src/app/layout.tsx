@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "CMF Masonry installs natural & manufactured stone veneer, tile, brick, and architectural precast for homeowners, designers, architects, and general contractors across Southern California.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "CMF Masonry | Crafted in Stone. Grounded in Place.",
+    title: "CMF Masonry | Crafted in Stone. Built to Endure.",
     description: "Architectural masonry for Southern California homes and commercial spaces.",
     url: SITE_URL,
     siteName: "CMF Masonry",
-    images: [{ url: "/og.png", width: 1733, height: 909, alt: "CMF Masonry — Crafted in stone. Grounded in place." }],
+    images: [{ url: "/og.png", width: 1733, height: 909, alt: "CMF Masonry — Crafted in stone. Built to endure." }],
     type: "website",
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
