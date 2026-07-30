@@ -32,6 +32,16 @@ export default function SiteFooter() {
             <li><Link href="/suppliers" className="hover:text-[color:var(--color-brick-light)]">Suppliers</Link></li>
             <li><Link href="/service-area" className="hover:text-[color:var(--color-brick-light)]">Service Area</Link></li>
             <li><Link href="/contact" className="hover:text-[color:var(--color-brick-light)]">Contact</Link></li>
+            <li>
+              <a
+                href="https://calmantel.com/careers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[color:var(--color-brick-light)]"
+              >
+                Careers
+              </a>
+            </li>
           </ul>
         </div>
 

@@ -17,6 +17,7 @@ const secondaryLinks = [
   { label: "Material Suppliers", href: "/suppliers" },
   { label: "Service Area", href: "/service-area" },
   { label: "Contact", href: "/contact" },
+  { label: "Careers", href: "https://calmantel.com/careers" },
 ];
 
 export default function SiteHeader() {
@@ -106,17 +107,29 @@ export default function SiteHeader() {
                 {link.label}<span aria-hidden className="text-[color:var(--color-brick)]">&rarr;</span>
               </Link>
             ))}
-            <div className="grid grid-cols-3 gap-2 py-5">
-              {secondaryLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-xs text-center text-[color:var(--color-ink-soft)] py-2"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="grid grid-cols-2 gap-2 py-5">
+              {secondaryLinks.map((link) =>
+                link.href.startsWith("http") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-center text-[color:var(--color-ink-soft)] py-2"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-xs text-center text-[color:var(--color-ink-soft)] py-2"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
             <div className="grid grid-cols-2 gap-3">
               <a
