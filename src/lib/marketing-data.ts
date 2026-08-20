@@ -97,6 +97,88 @@ export const serviceLandings: ServiceLanding[] = [
   },
 ];
 
+export type ServiceAreaLanding = {
+  slug: string;
+  county: string;
+  cities: string[];
+  eyebrow: string;
+  title: string;
+  description: string;
+  intro: string;
+  highlights: string[];
+};
+
+export const serviceAreaLandings: ServiceAreaLanding[] = [
+  {
+    slug: "orange-county",
+    county: "Orange County",
+    cities: ["Anaheim", "Orange", "Irvine", "Santa Ana", "Fullerton", "Yorba Linda", "Newport Beach", "Huntington Beach"],
+    eyebrow: "Orange County",
+    title: "Masonry Contractor in Orange County, CA",
+    description:
+      "Stone veneer, brick veneer, tile, and architectural precast installation for homes and commercial properties across Orange County — based in our Anaheim showroom.",
+    intro:
+      "CMF Masonry is headquartered in Anaheim, putting our crews close to projects across Orange County — from custom home exteriors in Yorba Linda and Irvine to retail and restaurant masonry along the coast in Newport Beach and Huntington Beach.",
+    highlights: [
+      "Local Anaheim showroom and material library",
+      "Custom home stone and brick veneer installation",
+      "Restaurant and retail masonry for commercial properties",
+      "Fireplace surrounds and precast architectural details",
+    ],
+  },
+  {
+    slug: "los-angeles-county",
+    county: "Los Angeles County",
+    cities: ["Los Angeles", "Long Beach", "Pasadena", "Glendale", "Santa Monica", "Torrance"],
+    eyebrow: "Los Angeles County",
+    title: "Masonry Contractor in Los Angeles County, CA",
+    description:
+      "Stone veneer, brick veneer, tile, and architectural precast installation for residential and commercial projects throughout Los Angeles County.",
+    intro:
+      "From single-family exteriors to multi-unit residential and commercial storefronts, CMF Masonry brings the same materials expertise and finish standard to projects across Los Angeles County that we deliver from our Anaheim base.",
+    highlights: [
+      "Custom home and multi-unit residential masonry",
+      "Commercial and retail façade installation",
+      "Natural and manufactured stone veneer",
+      "Coordination with architects and general contractors",
+    ],
+  },
+  {
+    slug: "riverside-county",
+    county: "Riverside County",
+    cities: ["Riverside", "Corona", "Temecula", "San Bernardino", "Moreno Valley"],
+    eyebrow: "Riverside County & the Inland Empire",
+    title: "Masonry Contractor in Riverside County, CA",
+    description:
+      "Stone, brick, tile, and precast masonry installation for homes and commercial properties across Riverside County and the Inland Empire.",
+    intro:
+      "CMF Masonry serves homeowners and commercial teams throughout Riverside County and the Inland Empire, from custom estate exteriors in Temecula to commercial and multi-site work in Corona and San Bernardino.",
+    highlights: [
+      "Custom home exteriors and fireplace surrounds",
+      "Commercial masonry for multi-site properties",
+      "Architectural precast and cast stone details",
+      "Material selection support for larger developments",
+    ],
+  },
+  {
+    slug: "san-diego-county",
+    county: "San Diego County",
+    cities: ["San Diego", "Chula Vista", "Oceanside", "Carlsbad", "Escondido"],
+    eyebrow: "San Diego County",
+    title: "Masonry Contractor in San Diego County, CA",
+    description:
+      "Stone veneer, brick veneer, tile, and architectural precast installation for residential and commercial properties across San Diego County.",
+    intro:
+      "CMF Masonry extends its Southern California masonry work into San Diego County, delivering the same materials-first approach to custom homes, restaurants, and commercial properties from Oceanside to Chula Vista.",
+    highlights: [
+      "Custom home stone and brick exteriors",
+      "Restaurant and retail commercial masonry",
+      "Tile and precast fireplace installations",
+      "Project coordination for out-of-area builds",
+    ],
+  },
+];
+
 export type CommercialCaseStudy = {
   slug: string;
   client: string;

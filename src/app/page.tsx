@@ -97,13 +97,21 @@ export default function HomePage() {
             Expert stone, brick, tile, and architectural precast installation for homes,
             restaurants, retail, and commercial properties across {BUSINESS.serviceArea}.
           </p>
-          <div className="flex flex-wrap items-center gap-8 mb-12">
+          <div className="flex flex-wrap items-center gap-4 mb-6">
             <Link
-              href="/estimate"
+              href="/estimate?project=Residential"
               className="inline-flex items-center gap-3 bg-[color:var(--color-ink)] hover:-translate-y-0.5 text-white px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] transition-transform"
             >
-              Request an estimate <span className="text-[color:var(--color-brick-light)]">&#8599;</span>
+              Homeowner project <span className="text-[color:var(--color-brick-light)]">&#8599;</span>
             </Link>
+            <Link
+              href="/estimate?project=Commercial"
+              className="inline-flex items-center gap-3 border border-[color:var(--color-ink)] text-[color:var(--color-ink)] hover:-translate-y-0.5 px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] transition-transform"
+            >
+              Commercial / GC project <span className="text-[color:var(--color-brick)]">&#8599;</span>
+            </Link>
+          </div>
+          <div className="mb-12">
             <Link
               href="/gallery"
               className="text-xs font-bold uppercase tracking-[0.13em] text-[color:var(--color-ink)] border-b border-[color:var(--color-ink)] pb-0.5"

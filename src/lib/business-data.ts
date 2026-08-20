@@ -1,4 +1,7 @@
-export const SITE_URL = "https://cmfmasonry.com";
+// Vercel's project-level domain config redirects the apex to www (308), so
+// www is the actual canonical host in production — keep this in sync with
+// that redirect direction, not the other way around.
+export const SITE_URL = "https://www.cmfmasonry.com";
 
 export const BUSINESS = {
   name: "CMF Masonry",

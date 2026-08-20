@@ -1,6 +1,8 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ProjectCTA from "@/components/ProjectCTA";
 import { BUSINESS } from "@/lib/business-data";
+import { serviceAreaLandings } from "@/lib/marketing-data";
 
 export const metadata = {
   title: "Service Area — Southern California Masonry Contractor",
@@ -27,6 +29,29 @@ export default function ServiceAreaPage() {
       />
 
       <section className="container-page py-16">
+        <h2
+          className="text-2xl font-medium text-[color:var(--color-ink)] mb-6"
+          style={{ fontFamily: "var(--font-serif)" }}
+        >
+          Service area by county
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+          {serviceAreaLandings.map((area) => (
+            <Link
+              key={area.slug}
+              href={`/service-area/${area.slug}`}
+              className="block border border-[color:var(--color-line)] bg-[color:var(--color-paper-warm)] px-5 py-6 hover:border-[color:var(--color-brick)] transition-colors"
+            >
+              <span className="block text-lg mb-1" style={{ fontFamily: "var(--font-serif)" }}>
+                {area.county}
+              </span>
+              <span className="text-xs font-bold uppercase tracking-[0.13em] text-[color:var(--color-brick)]">
+                View coverage &rarr;
+              </span>
+            </Link>
+          ))}
+        </div>
+
         <h2
           className="text-2xl font-medium text-[color:var(--color-ink)] mb-6"
           style={{ fontFamily: "var(--font-serif)" }}

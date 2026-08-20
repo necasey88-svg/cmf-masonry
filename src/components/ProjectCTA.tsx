@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BUSINESS } from "@/lib/business-data";
 
 export default function ProjectCTA({
   title = "Plan your masonry project with confidence.",
@@ -25,6 +26,10 @@ export default function ProjectCTA({
         >
           Request an Estimate
         </Link>
+        <p className="mt-6 text-xs uppercase tracking-[0.13em] text-[color:var(--color-ink-soft)]">
+          CA Licensed #{BUSINESS.licenses.california} &middot; {BUSINESS.masonryExperience} in business
+          &middot; Trusted by In-N-Out, Chase Bank, Burger King &amp; 7-Eleven
+        </p>
       </div>
     </section>
   );
