@@ -213,7 +213,6 @@ export const galleryImages: GalleryImage[] = [
   { file: "residential-modern-stone.jpeg", src: "/residential/residential-modern-stone.jpeg", category: "residential", alt: "Modern home with stone and stucco elevation", caption: "Modern Stone Elevation" },
   { file: "residential-block-modern.jpeg", src: "/residential/residential-block-modern.jpeg", category: "residential", alt: "Block-clad modern home exterior", caption: "Block-Clad Modern Home" },
   { file: "residential-white-window-lawn.jpeg", src: "/residential/residential-white-window-lawn.jpeg", category: "residential", alt: "White stucco residence with front lawn", caption: "White Stucco Residence" },
-  { file: "residential-modern-accent.jpeg", src: "/residential/residential-modern-accent.jpeg", category: "residential", alt: "Contemporary home with brick and stucco accent facade", caption: "Contemporary Accent Facade" },
   { file: "residential-stone-entry-detail.jpeg", src: "/residential/residential-stone-entry-detail.jpeg", category: "residential", alt: "Natural stone entry and doorway detail", caption: "Stone Entry Detail" },
 
   // Precast concrete project photos (client downloads, 2026-07)

@@ -54,7 +54,6 @@ const residentialBuilds = [
   { src: "/residential/residential-modern-stone.jpeg", title: "Modern stone elevation", material: "Stone & stucco", span: "", feature: false },
   { src: "/residential/residential-block-modern.jpeg", title: "Block-clad modern home", material: "Cut stone", span: "", feature: false },
   { src: "/residential/residential-white-window-lawn.jpeg", title: "White stucco residence", material: "Smooth stucco", span: "", feature: false },
-  { src: "/residential/residential-modern-accent.jpeg", title: "Contemporary accent facade", material: "Brick & stucco", span: "", feature: false },
   { src: "/residential/residential-stone-entry-detail.jpeg", title: "Stone entry detail", material: "Natural stone", span: "", feature: false },
 ];
 
