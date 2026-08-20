@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ProjectCTA from "@/components/ProjectCTA";
+import TrustSection from "@/components/TrustSection";
 import { services, benefits } from "@/lib/business-data";
 
 export const metadata = {
@@ -64,6 +65,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <TrustSection />
 
       <ProjectCTA />
     </>

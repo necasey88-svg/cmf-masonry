@@ -30,7 +30,7 @@ export default function AboutPage() {
           select materials from leading suppliers and plans the installation from start to finish.
         </p>
         <p className="text-[color:var(--color-ink-soft)] leading-relaxed">
-          We&apos;re part of the {" "}
+          {BUSINESS.dbaClarifier} We&apos;re part of the{" "}
           <a
             href={BUSINESS.parentSite}
             target="_blank"

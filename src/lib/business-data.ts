@@ -6,6 +6,9 @@ export const SITE_URL = "https://www.cmfmasonry.com";
 export const BUSINESS = {
   name: "CMF Masonry",
   legalName: "California Mantel & Fireplace dba CMF Masonry",
+  parentName: "California Mantel & Fireplace",
+  dbaClarifier:
+    "CMF Masonry is the masonry division / DBA of California Mantel & Fireplace in Anaheim, CA.",
   // CallRail tracking number dedicated to CMF Masonry ("Google Ads Assets - Masonry"
   // pool, company 736627927) — distinct from the shared Anaheim showroom line
   // (714) 908-7388, so masonry call volume is attributable on its own.
@@ -27,6 +30,25 @@ export const BUSINESS = {
     "Los Angeles, Orange, Riverside, and San Diego counties, and the rest of Southern California",
   parentSite: "https://calmantel.com",
 };
+
+export const trustSignals = [
+  {
+    value: "Anaheim showroom",
+    label: "Shared California Mantel & Fireplace location",
+  },
+  {
+    value: "CA #675006",
+    label: "California contractor license",
+  },
+  {
+    value: "20+ years",
+    label: "Masonry experience in Southern California",
+  },
+  {
+    value: "Residential + commercial",
+    label: "Homes, designers, architects, and GCs",
+  },
+];
 
 export type MasonryService = {
   slug: string;

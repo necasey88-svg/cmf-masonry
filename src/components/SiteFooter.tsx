@@ -17,6 +17,9 @@ export default function SiteFooter() {
             More than 20 years of stone, brick, tile, and precast experience for homeowners,
             designers, architects, and general contractors across {BUSINESS.serviceArea}.
           </p>
+          <p className="text-xs text-[color:var(--color-paper)]/50 mt-4 leading-relaxed">
+            {BUSINESS.dbaClarifier}
+          </p>
         </div>
 
         <div>

@@ -3,6 +3,8 @@ import Image from "next/image";
 import ProjectCTA from "@/components/ProjectCTA";
 import DarkBuildGrid from "@/components/DarkBuildGrid";
 import LightBuildGrid from "@/components/LightBuildGrid";
+import TrustSection from "@/components/TrustSection";
+import Testimonials from "@/components/Testimonials";
 import { services, benefits, suppliers, BUSINESS } from "@/lib/business-data";
 import { commercialCaseStudies } from "@/lib/marketing-data";
 
@@ -178,6 +180,9 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <TrustSection />
+      <Testimonials />
 
       {/* Project paths */}
       <section className="container-page py-20 lg:py-24">

@@ -20,6 +20,9 @@ export default function ContactPage() {
       <section className="container-page py-16">
         <div className="bg-white border border-[color:var(--color-line)] p-8 max-w-xl">
           <h2 className="text-[color:var(--color-ink)] font-medium text-lg mb-2">Anaheim Showroom</h2>
+          <p className="text-[color:var(--color-ink-soft)] text-sm leading-relaxed mb-4">
+            {BUSINESS.dbaClarifier}
+          </p>
           <p className="text-[color:var(--color-ink-soft)] text-sm mb-1">
             {BUSINESS.address.street}, {BUSINESS.address.city}, {BUSINESS.address.state} {BUSINESS.address.zip}
           </p>
@@ -35,6 +38,9 @@ export default function ContactPage() {
           <a href={BUSINESS.phoneHref} className="text-[color:var(--color-brick)] font-medium hover:text-[color:var(--color-ink)] transition-colors">
             {BUSINESS.phone}
           </a>
+          <p className="text-[color:var(--color-ink-soft)] text-xs mt-4">
+            {BUSINESS.legalName} &middot; CA License #{BUSINESS.licenses.california}
+          </p>
         </div>
 
         <div className="mt-10">

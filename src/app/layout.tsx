@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   },
   description:
     "CMF Masonry installs natural & manufactured stone veneer, tile, brick, and architectural precast for homeowners, designers, architects, and general contractors across Southern California.",
+  alternates: { canonical: "/" },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     title: "CMF Masonry | Crafted in Stone. Built to Endure.",
@@ -30,9 +31,12 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: BUSINESS.name,
+  alternateName: [BUSINESS.parentName, "California Mantel & Fireplace Anaheim"],
   legalName: BUSINESS.legalName,
+  description: BUSINESS.dbaClarifier,
   telephone: BUSINESS.phone,
   url: SITE_URL,
+  sameAs: [BUSINESS.parentSite],
   identifier: [
     {
       "@type": "PropertyValue",
