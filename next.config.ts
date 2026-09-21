@@ -9,6 +9,23 @@ const nextConfig: NextConfig = {
     // needed — serve them as-is instead.
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      // The stable Vercel-provided alias (cmf-masonry.vercel.app) serves the
+      // same production deployment as the custom domain but has no host-level
+      // redirect configured in Vercel, so it was resolving with 200s and
+      // duplicating every page under a second indexable host. Preview
+      // deployment URLs (cmf-masonry-<hash>-<team>.vercel.app,
+      // cmf-masonry-git-<branch>-<team>.vercel.app) are untouched by this
+      // exact-host match, so PR previews keep working normally.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "cmf-masonry.vercel.app" }],
+        destination: "https://www.cmfmasonry.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
