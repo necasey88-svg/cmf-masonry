@@ -191,6 +191,19 @@ export type CommercialCaseStudy = {
 
 export const commercialCaseStudies: CommercialCaseStudy[] = [
   {
+    slug: "longhorn-steakhouse",
+    client: "LongHorn Steakhouse",
+    sector: "Restaurant",
+    title: "Masonry for a New Restaurant Build",
+    description:
+      "Commercial masonry work completed for a LongHorn Steakhouse property in Southern California, including exterior stone veneer piers and an interior stone accent bar wall.",
+    scope: "Commercial masonry installation",
+    images: [
+      { src: "/commercial/commercial-longhorn-steakhouse-exterior.webp", alt: "LongHorn Steakhouse restaurant exterior with stone veneer entry piers and stone wainscot" },
+      { src: "/commercial/commercial-longhorn-steakhouse-bar-interior.webp", alt: "Finished stone veneer accent columns behind the bar at a LongHorn Steakhouse restaurant" },
+    ],
+  },
+  {
     slug: "in-n-out-burger",
     client: "In-N-Out Burger",
     sector: "Restaurant",
