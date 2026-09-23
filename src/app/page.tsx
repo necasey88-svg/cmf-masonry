@@ -24,7 +24,8 @@ const customBuilds = [
 ];
 
 const commercialBuilds = [
-  { src: "/commercial/commercial-extramile-storefront.jpeg", title: "Retail storefront", sector: "Fuel & convenience", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/commercial/commercial-longhorn-steakhouse-exterior.webp", title: "LongHorn Steakhouse", sector: "Restaurant", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/commercial/commercial-extramile-storefront.jpeg", title: "Retail storefront", sector: "Fuel & convenience", span: "", feature: false },
   { src: "/commercial/commercial-highrise-stone.jpeg", title: "High-rise stone facade", sector: "Mixed use", span: "", feature: false },
   { src: "/commercial/commercial-multifamily-pool.jpeg", title: "Pool amenity masonry", sector: "Multi-family", span: "", feature: false },
   { src: "/commercial/commercial-white-stone-facade.jpeg", title: "White stone exterior", sector: "Restaurant", span: "md:col-span-2", feature: false },
@@ -46,7 +47,8 @@ const commercialProof = [
 ];
 
 const residentialBuilds = [
-  { src: "/residential/residential-white-modern-twostory.jpeg", title: "White contemporary residence", material: "Stucco & stone", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/residential/residential-stone-media-wall-niches.webp", title: "Tumbled stone media wall", material: "Tumbled stone", span: "md:col-span-2 md:row-span-2", feature: true },
+  { src: "/residential/residential-white-modern-twostory.jpeg", title: "White contemporary residence", material: "Stucco & stone", span: "", feature: false },
   { src: "/residential/residential-traditional-stone-entry.jpeg", title: "Traditional stone entry", material: "Natural stone", span: "", feature: false },
   { src: "/residential/residential-stone-traditional.jpeg", title: "Stone traditional home", material: "Stone & stucco", span: "", feature: false },
   { src: "/residential/residential-modern-stucco.jpeg", title: "Modern stucco elevation", material: "Smooth stucco", span: "md:col-span-2", feature: false },
