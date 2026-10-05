@@ -102,6 +102,24 @@ export default function EstimateForm({ defaultProjectType = "" }: { defaultProje
       </div>
 
       <div>
+        <label htmlFor="communication-preference" className="block text-sm font-medium text-[color:var(--color-ink)] mb-1.5">
+          Preferred method of communication
+        </label>
+        <select
+          id="communication-preference"
+          name="Preferred method of communication"
+          required
+          defaultValue=""
+          className="w-full border border-[color:var(--color-line)] px-3.5 py-2.5 text-sm bg-white"
+        >
+          <option value="" disabled>Select an option</option>
+          <option value="Text">Text</option>
+          <option value="Phone">Phone</option>
+          <option value="Email">Email</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="role" className="block text-sm font-medium text-[color:var(--color-ink)] mb-1.5">
           I&apos;m a
         </label>
