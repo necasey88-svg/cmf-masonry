@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BUSINESS } from "@/lib/business-data";
+import { BUSINESS, legalIdentificationLine } from "@/lib/business-data";
 import BrandMark from "@/components/BrandMark";
 
 export default function SiteFooter() {
@@ -62,10 +62,7 @@ export default function SiteFooter() {
               </a>
             </li>
             <li className="pt-2 text-xs text-[color:var(--color-paper)]/55">
-              {BUSINESS.legalName}
-            </li>
-            <li className="text-xs text-[color:var(--color-paper)]/55">
-              CA License #{BUSINESS.licenses.california}
+              {legalIdentificationLine}
             </li>
           </ul>
         </div>

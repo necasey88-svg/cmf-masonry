@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { BUSINESS } from "@/lib/business-data";
+import { BUSINESS, legalIdentificationLine } from "@/lib/business-data";
 
 export const metadata = {
   title: "Contact Us",
@@ -39,7 +39,7 @@ export default function ContactPage() {
             {BUSINESS.phone}
           </a>
           <p className="text-[color:var(--color-ink-soft)] text-xs mt-4">
-            {BUSINESS.legalName} &middot; CA License #{BUSINESS.licenses.california}
+            {legalIdentificationLine}
           </p>
         </div>
 
