@@ -37,6 +37,11 @@ const localBusinessSchema = {
   telephone: BUSINESS.phone,
   url: SITE_URL,
   sameAs: [BUSINESS.parentSite],
+  parentOrganization: {
+    "@type": "Organization",
+    name: `${BUSINESS.parentName}, Inc.`,
+    sameAs: BUSINESS.parentSite,
+  },
   identifier: [
     {
       "@type": "PropertyValue",

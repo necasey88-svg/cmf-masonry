@@ -5,7 +5,7 @@ export const SITE_URL = "https://www.cmfmasonry.com";
 
 export const BUSINESS = {
   name: "CMF Masonry",
-  legalName: "California Mantel & Fireplace dba CMF Masonry",
+  legalName: "CMF Masonry Division, a division of California Mantel & Fireplace, Inc.",
   parentName: "California Mantel & Fireplace",
   dbaClarifier:
     "CMF Masonry is the masonry division / DBA of California Mantel & Fireplace in Anaheim, CA.",
@@ -30,6 +30,12 @@ export const BUSINESS = {
     "Los Angeles, Orange, Riverside, and San Diego counties, and the rest of Southern California",
   parentSite: "https://calmantel.com",
 };
+
+// Exact business-identification sentence for the footer, /contact, and anywhere
+// else the full legal name + license needs to appear together (per Natalie's
+// 2026 wording request). Keep this in sync with BUSINESS.legalName /
+// BUSINESS.licenses.california rather than hardcoding the sentence elsewhere.
+export const legalIdentificationLine = `${BUSINESS.legalName}, CSLB License No. ${BUSINESS.licenses.california}.`;
 
 export const trustSignals = [
   {
